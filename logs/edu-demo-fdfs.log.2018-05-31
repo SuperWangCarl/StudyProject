@@ -1,0 +1,4 @@
+[INFO ][20180531 11:03:48,484][JSONObject:336] Property 'day' of class java.util.Date has no write method. SKIPPED.
+[INFO ][20180531 11:03:48,489][JSONObject:336] Property 'timezoneOffset' of class java.util.Date has no write method. SKIPPED.
+[INFO ][20180531 11:06:11,604][JSONObject:336] Property 'day' of class java.util.Date has no write method. SKIPPED.
+[INFO ][20180531 11:06:11,608][JSONObject:336] Property 'timezoneOffset' of class java.util.Date has no write method. SKIPPED.

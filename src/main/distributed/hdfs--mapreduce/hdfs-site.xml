@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+
+<!-- hdfs-site.xml -->
+<!-- 文件保存两份-->
+<configuration>
+<!-- 指定HDFS副本的数量 -->
+<property>
+<name>dfs.replication</name>
+<value>2</value>
+</property>
+<!-- 配置第二个点访问地址  如果secondarynamenode为多个话可以设置为0.0.0.0:50090-->
+<property>
+<name>dfs.secondary.http.address</name>
+<value>192.168.0.73:50090</value>
+</property>
+<!-- 配置访问地址-->
+<property>
+<name>dfs.http.address</name>
+<value>192.168.0.71:50070</value>
+</property>
+<!-- 将namenode的edits的数据存放到两个不同的文件里面-->
+<property>
+<name>dfs.name.dir</name>
+<value>/application/hadoop/tmp/name1,/application/hadoop/tmp/name2</value>
+</property>
+<!-- 将datanode的数据存到到多块目录中数据不同相当于raid0-->
+<property>
+<name>dfs.data.dir</name>
+<value>/application/hadoop/tmp/data1,/application/hadoop/tmp/data2</value>
+</property>
+<!-- 配置每个block的大小,默认128M-->
+<property>
+<name>dfs.block.size</name>
+<value>134217728</value>
+</property>
+</configuration>

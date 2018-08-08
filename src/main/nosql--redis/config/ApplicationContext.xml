@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	              http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+				  http://www.springframework.org/schema/context
+				  http://www.springframework.org/schema/context/spring-context-3.2.xsd
+				  http://www.springframework.org/schema/aop 
+                  http://www.springframework.org/schema/aop/spring-aop.xsd		
+                  http://www.springframework.org/schema/task
+                 http://www.springframework.org/schema/task/spring-task-3.2.xsd
+				 http://www.springframework.org/schema/tx 
+				 http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+
+<!-- 单机版 不解释  配置如下：          不支持高可用              不支持分片 -->
+	<!-- 加载配置属性文件 -->    
+	<context:property-placeholder ignore-unresolvable="true" location="classpath:redis.properties" />     
+	    
+	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">    
+	    <property name="maxIdle" value="300" /> <!-- 最大能够保持idel状态的对象数 -->     
+	    <property name="maxTotal" value="60000" /> <!-- 最大分配的对象数 -->    
+	    <property name="testOnBorrow" value="true" /> <!-- 当调用borrow Object方法时，是否进行有效性检查 -->    
+	</bean>    
+	    
+	<bean id="jedisPool" class="redis.clients.jedis.JedisPool">    
+	    <constructor-arg index="0" ref="jedisPoolConfig" />    
+	    <constructor-arg index="1" value="${redis.host}" />    
+	    <constructor-arg index="2" value="${redis.port}" type="int" />    
+	    <constructor-arg index="3" value="${redis.timeout}"/>    
+	    <constructor-arg index="4" value="${redis.password}"/>    
+	</bean>   
+<!-- Sentinel 哨兵模式 主从模式，一主多从模式           支持高可用              不支持分片 -->
+    <context:property-placeholder ignore-unresolvable="true" location="classpath:redis.properties" />  
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">  
+        <property name="maxTotal" value="${redis.maxTotal}" />  
+        <property name="minIdle" value="${redis.minIdle}" />  
+        <property name="maxWaitMillis" value="${redis.maxWaitTime}" />  
+        <property name="maxIdle" value="${redis.maxIdle}" />  
+        <property name="testOnBorrow" value="${redis.testOnBorrow}" />  
+        <property name="testOnReturn" value="true" />  
+        <property name="testWhileIdle" value="true" />  
+    </bean>  
+    <bean id="jedisSentinelPool" class="redis.clients.jedis.JedisSentinelPool">  
+        <constructor-arg index="0" value="mymaster" />  
+        <constructor-arg index="1">  
+            <set>  
+                <value>${redis.sentinel1.host}:${redis.sentinel1.port}</value>  
+                <value>${redis.sentinel2.host}:${redis.sentinel2.port}</value>  
+            </set>  
+        </constructor-arg>  
+        <constructor-arg index="2" ref="poolConfig" />   
+        <constructor-arg index="3" value="${redis.password}" />  
+    </bean>  
+<!-- Redis Sharding集群           支持分片        不支持高可用 -->
+    <!-- jedis 连接池配置-->  
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">    
+        <property name="maxActive"     value="${redis.pool.maxActive}" />    
+        <property name="maxIdle"       value="${redis.pool.maxIdle}" />    
+        <property name="maxWait"       value="${redis.pool.maxWait}" />    
+        <property name="testOnBorrow"  value="${redis.pool.testOnBorrow}" />    
+    </bean>    
+      <!-- jedis 多个服务器配置-->  
+      <bean id="jedisShardInfo1" class="redis.clients.jedis.JedisShardInfo">    
+        <constructor-arg index="0" value="${redis2.ip}" />    
+        <constructor-arg index="1" value="${redis.port}" type="int" />  
+        <property value="${redis.password}" name="password"/>       
+      </bean>   
+    
+      <bean id="jedisShardInfo2" class="redis.clients.jedis.JedisShardInfo">    
+        <constructor-arg index="0" value="${redis.ip}" />    
+        <constructor-arg index="1" value="${redis.port}" type="int" />  
+        <property value="${redis.password}" name="password"/>     
+      </bean>   
+    
+      <bean id="shardedJedisPool" class="redis.clients.jedis.ShardedJedisPool">    
+        <constructor-arg index="0" ref="jedisPoolConfig" />    
+        <constructor-arg index="1">  
+          <list>  
+            <ref bean="jedisShardInfo1" />  
+            <ref bean="jedisShardInfo2"/>  
+          </list>  
+        </constructor-arg>    
+      </bean>  
+<!-- Redis Cluster， Redis官方集群方案  支持高可用和分片  redis2.0解决方案     非官方-->
+<!-- https://github.com/warmbreeze/sharded-jedis-sentinel-pool  -->
+ <!-- 连接池配置 -->
+     <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxIdle" value="8" />
+        <property name="maxTotal" value="50" />  
+        <property name="maxWaitMillis" value="1000" /> 
+        <property name="testOnBorrow" value="true" />
+        <property name="testOnReturn" value="true" />
+     </bean>
+    <!-- 自定义分片处理哨兵池配置 -->
+    <bean id="shardedJedisPool" class="com.yto.demo.java.jedis.spring.sentinel.pool.ShardedJedisSentinelPool">
+        <constructor-arg index="0" ref="jedisPoolConfig" />
+        <constructor-arg index="1">
+            <list>
+                <value>mymaster</value> <!-- 集群1 -->
+                <value>mymaster02</value> <!-- 集群2 -->
+            </list>
+        </constructor-arg>
+        <constructor-arg index="2">
+            <set>
+                <value>192.168.8.50:26379</value>
+                <value>192.168.8.50:26479</value>
+            </set>
+        </constructor-arg>
+    </bean>
+    <!-- 自定义抽象jedis 信息 -->
+    <bean id="redisDataSource"  class="com.yto.demo.java.jedis.spring.api.impl.RedisSharedSentinelDataSourceImpl">
+        <property name="shardedJedisPool" ref="shardedJedisPool"></property>
+    </bean>
+    
+    <bean id="redisClientTemplate"  class="com.yto.demo.java.jedis.spring.client.RedisSharedSentinelClientTemplate">
+        <property name="redisDataSource" ref="redisDataSource"></property>
+    </bean>
+<!-- Redis Cluster， Redis官方集群方案  支持高可用和分片  redis3.0解决方案     官方-->
+    <!-- Jedis链接池配置，注意：Jedis版本建议升级到最新 redis3.0以上 -->    
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">    
+        <property name="maxTotal" value="100" />    
+        <property name="maxIdle" value="20" />    
+        <property name="minIdle" value="10" />    
+        <property name="blockWhenExhausted" value="true"></property>    
+        <property name="maxWaitMillis" value="3000" />    
+        <property name="testOnBorrow" value="false" />    
+        <property name="testOnReturn" value="false" />    
+        <property name="testWhileIdle" value="true" />    
+        <property name="minEvictableIdleTimeMillis" value="60000" />    
+        <property name="timeBetweenEvictionRunsMillis" value="30000" />    
+        <property name="numTestsPerEvictionRun" value="-1" />    
+    </bean>    
+    
+    <!-- JedisCluster -->    
+    <bean id="jedisCluster" class="redis.clients.jedis.JedisCluster">    
+        <constructor-arg index="0">    
+            <set>    
+                <bean class="redis.clients.jedis.HostAndPort">    
+                    <constructor-arg index="0" value="192.168.1.111" />    
+                    <constructor-arg index="1" value="7111" type="int" />    
+                </bean>    
+                <bean class="redis.clients.jedis.HostAndPort">    
+                    <constructor-arg index="0" value="192.168.1.112" />    
+                    <constructor-arg index="1" value="7112" type="int" />    
+                </bean>    
+                <bean class="redis.clients.jedis.HostAndPort">    
+                    <constructor-arg index="0" value="192.168.1.113" />    
+                    <constructor-arg index="1" value="7113" type="int" />    
+                </bean>    
+                <bean class="redis.clients.jedis.HostAndPort">    
+                    <constructor-arg index="0" value="192.168.1.114" />    
+                    <constructor-arg index="1" value="7114" type="int" />    
+                </bean>    
+                <bean class="redis.clients.jedis.HostAndPort">    
+                    <constructor-arg index="0" value="192.168.1.115" />    
+                    <constructor-arg index="1" value="7115" type="int" />    
+                </bean>    
+                <bean class="redis.clients.jedis.HostAndPort">    
+                    <constructor-arg index="0" value="192.168.1.116" />    
+                    <constructor-arg index="1" value="7116" type="int" />    
+                </bean>    
+            </set>    
+        </constructor-arg>    
+        <constructor-arg index="1" value="2000" type="int"></constructor-arg>    
+        <constructor-arg index="2" value="100" type="int"></constructor-arg>    
+        <constructor-arg index="3" ref="jedisPoolConfig"></constructor-arg>    
+    </bean>    
+</beans>
+

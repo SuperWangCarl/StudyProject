@@ -1,0 +1,1056 @@
+[INFO ][20180527 12:57:12,961][Logging$class:68] Verifying properties
+[INFO ][20180527 12:57:13,014][Logging$class:68] Property metadata.broker.list is overridden to 192.168.0.71:9092,192.168.0.72:9092,192.168.0.73:9092
+[INFO ][20180527 12:57:13,019][Logging$class:68] Property partitioner.class is overridden to cn.itcast.storm.kafka.MyLogPartitioner
+[INFO ][20180527 12:57:13,020][Logging$class:68] Property request.required.acks is overridden to 1
+[INFO ][20180527 12:57:13,020][Logging$class:68] Property serializer.class is overridden to kafka.serializer.StringEncoder
+[INFO ][20180527 12:57:13,856][Logging$class:68] Fetching metadata from broker id:1,host:192.168.0.72,port:9092 with correlation id 0 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 12:57:13,959][Logging$class:68] Connected to 192.168.0.72:9092 for producing
+[INFO ][20180527 12:57:14,018][Logging$class:68] Disconnecting from 192.168.0.72:9092
+[ERROR][20180527 12:57:16,374][Logging$class:103] Producer connection to CentOS-03:9092 unsuccessful
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[WARN ][20180527 12:57:16,383][Logging$class:89] Failed to send producer request with correlation id 2 to broker 2 with data for partitions [orderMq,1]
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[INFO ][20180527 12:57:16,393][Logging$class:68] Back off for 100 ms before retrying send. Remaining retries = 3
+[INFO ][20180527 12:57:16,495][Logging$class:68] Fetching metadata from broker id:2,host:192.168.0.73,port:9092 with correlation id 3 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 12:57:16,497][Logging$class:68] Connected to 192.168.0.73:9092 for producing
+[INFO ][20180527 12:57:16,507][Logging$class:68] Disconnecting from 192.168.0.73:9092
+[ERROR][20180527 12:57:16,509][Logging$class:103] Producer connection to CentOS-03:9092 unsuccessful
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[WARN ][20180527 12:57:16,511][Logging$class:89] Failed to send producer request with correlation id 5 to broker 2 with data for partitions [orderMq,1]
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[INFO ][20180527 12:57:16,515][Logging$class:68] Back off for 100 ms before retrying send. Remaining retries = 2
+[INFO ][20180527 12:57:16,616][Logging$class:68] Fetching metadata from broker id:1,host:192.168.0.72,port:9092 with correlation id 6 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 12:57:16,618][Logging$class:68] Connected to 192.168.0.72:9092 for producing
+[INFO ][20180527 12:57:16,623][Logging$class:68] Disconnecting from 192.168.0.72:9092
+[ERROR][20180527 12:57:16,625][Logging$class:103] Producer connection to CentOS-03:9092 unsuccessful
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[WARN ][20180527 12:57:16,627][Logging$class:89] Failed to send producer request with correlation id 8 to broker 2 with data for partitions [orderMq,1]
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[INFO ][20180527 12:57:16,628][Logging$class:68] Back off for 100 ms before retrying send. Remaining retries = 1
+[INFO ][20180527 12:57:16,729][Logging$class:68] Fetching metadata from broker id:1,host:192.168.0.72,port:9092 with correlation id 9 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 12:57:16,731][Logging$class:68] Connected to 192.168.0.72:9092 for producing
+[INFO ][20180527 12:57:16,736][Logging$class:68] Disconnecting from 192.168.0.72:9092
+[ERROR][20180527 12:57:16,738][Logging$class:103] Producer connection to CentOS-03:9092 unsuccessful
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[WARN ][20180527 12:57:16,739][Logging$class:89] Failed to send producer request with correlation id 11 to broker 2 with data for partitions [orderMq,1]
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[INFO ][20180527 12:57:16,740][Logging$class:68] Back off for 100 ms before retrying send. Remaining retries = 0
+[INFO ][20180527 12:57:16,842][Logging$class:68] Fetching metadata from broker id:0,host:192.168.0.71,port:9092 with correlation id 12 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 12:57:16,843][Logging$class:68] Connected to 192.168.0.71:9092 for producing
+[INFO ][20180527 12:57:16,849][Logging$class:68] Disconnecting from 192.168.0.71:9092
+[ERROR][20180527 12:57:16,853][Logging$class:97] Failed to send requests for topics orderMq with correlation ids in [0,12]
+[INFO ][20180527 13:00:21,493][Logging$class:68] Verifying properties
+[INFO ][20180527 13:00:21,540][Logging$class:68] Property metadata.broker.list is overridden to 192.168.0.71:9092,192.168.0.72:9092,192.168.0.73:9092
+[INFO ][20180527 13:00:21,542][Logging$class:68] Property partitioner.class is overridden to cn.itcast.storm.kafka.MyLogPartitioner
+[INFO ][20180527 13:00:21,542][Logging$class:68] Property request.required.acks is overridden to 1
+[INFO ][20180527 13:00:21,543][Logging$class:68] Property serializer.class is overridden to kafka.serializer.StringEncoder
+[INFO ][20180527 13:00:22,195][Logging$class:68] Fetching metadata from broker id:0,host:192.168.0.71,port:9092 with correlation id 0 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 13:00:22,252][Logging$class:68] Connected to 192.168.0.71:9092 for producing
+[INFO ][20180527 13:00:22,284][Logging$class:68] Disconnecting from 192.168.0.71:9092
+[INFO ][20180527 13:00:22,348][Logging$class:68] Connected to CentOS-03:9092 for producing
+[INFO ][20180527 13:00:22,393][Logging$class:68] Connected to CentOS-01:9092 for producing
+[INFO ][20180527 13:00:22,415][Logging$class:68] Connected to CentOS-02:9092 for producing
+[INFO ][20180527 13:03:49,624][Logging$class:68] Verifying properties
+[INFO ][20180527 13:03:49,690][Logging$class:68] Property metadata.broker.list is overridden to 192.168.0.71:9092,192.168.0.72:9092,192.168.0.73:9092
+[INFO ][20180527 13:03:49,694][Logging$class:68] Property partitioner.class is overridden to cn.itcast.storm.kafka.MyLogPartitioner
+[INFO ][20180527 13:03:49,695][Logging$class:68] Property request.required.acks is overridden to 1
+[INFO ][20180527 13:03:49,695][Logging$class:68] Property serializer.class is overridden to kafka.serializer.StringEncoder
+[INFO ][20180527 13:03:50,625][Logging$class:68] Fetching metadata from broker id:1,host:192.168.0.72,port:9092 with correlation id 0 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 13:03:50,704][Logging$class:68] Connected to 192.168.0.72:9092 for producing
+[INFO ][20180527 13:03:50,751][Logging$class:68] Disconnecting from 192.168.0.72:9092
+[INFO ][20180527 13:03:50,848][Logging$class:68] Connected to CentOS-03:9092 for producing
+[INFO ][20180527 13:03:50,866][Logging$class:68] Connected to CentOS-01:9092 for producing
+[INFO ][20180527 13:03:50,872][Logging$class:68] Connected to CentOS-02:9092 for producing
+[INFO ][20180527 13:06:05,052][Logging$class:68] Verifying properties
+[INFO ][20180527 13:06:05,129][Logging$class:68] Property metadata.broker.list is overridden to 192.168.0.71:9092,192.168.0.72:9092,192.168.0.73:9092
+[INFO ][20180527 13:06:05,133][Logging$class:68] Property partitioner.class is overridden to cn.itcast.storm.kafka.MyLogPartitioner
+[INFO ][20180527 13:06:05,134][Logging$class:68] Property request.required.acks is overridden to 1
+[INFO ][20180527 13:06:05,134][Logging$class:68] Property serializer.class is overridden to kafka.serializer.StringEncoder
+[INFO ][20180527 13:06:06,123][Logging$class:68] Fetching metadata from broker id:0,host:192.168.0.71,port:9092 with correlation id 0 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 13:06:06,222][Logging$class:68] Connected to 192.168.0.71:9092 for producing
+[INFO ][20180527 13:06:06,276][Logging$class:68] Disconnecting from 192.168.0.71:9092
+[INFO ][20180527 13:06:06,380][Logging$class:68] Connected to CentOS-03:9092 for producing
+[INFO ][20180527 13:07:02,944][Logging$class:68] Verifying properties
+[INFO ][20180527 13:07:03,026][Logging$class:68] Property metadata.broker.list is overridden to 192.168.0.71:9092,192.168.0.72:9092,192.168.0.73:9092
+[INFO ][20180527 13:07:03,029][Logging$class:68] Property partitioner.class is overridden to cn.itcast.storm.kafka.MyLogPartitioner
+[INFO ][20180527 13:07:03,029][Logging$class:68] Property request.required.acks is overridden to 1
+[INFO ][20180527 13:07:03,030][Logging$class:68] Property serializer.class is overridden to kafka.serializer.StringEncoder
+[INFO ][20180527 13:07:04,041][Logging$class:68] Fetching metadata from broker id:0,host:192.168.0.71,port:9092 with correlation id 0 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 13:07:04,151][Logging$class:68] Connected to 192.168.0.71:9092 for producing
+[INFO ][20180527 13:07:04,225][Logging$class:68] Disconnecting from 192.168.0.71:9092
+[INFO ][20180527 13:07:04,367][Logging$class:68] Connected to CentOS-03:9092 for producing
+[INFO ][20180527 20:55:37,095][Logging$class:68] Verifying properties
+[INFO ][20180527 20:55:37,152][Logging$class:68] Property metadata.broker.list is overridden to 192.168.0.71:9092,192.168.0.72:9092,192.168.0.73:9092
+[INFO ][20180527 20:55:37,156][Logging$class:68] Property partitioner.class is overridden to cn.itcast.storm.kafka.MyLogPartitioner
+[INFO ][20180527 20:55:37,156][Logging$class:68] Property request.required.acks is overridden to 1
+[INFO ][20180527 20:55:37,157][Logging$class:68] Property serializer.class is overridden to kafka.serializer.StringEncoder
+[INFO ][20180527 20:55:37,920][Logging$class:68] Fetching metadata from broker id:1,host:192.168.0.72,port:9092 with correlation id 0 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 20:55:38,005][Logging$class:68] Connected to 192.168.0.72:9092 for producing
+[INFO ][20180527 20:55:38,068][Logging$class:68] Disconnecting from 192.168.0.72:9092
+[INFO ][20180527 20:55:38,146][Logging$class:68] Connected to CentOS-03:9092 for producing
+[INFO ][20180527 20:56:56,052][Logging$class:68] Verifying properties
+[INFO ][20180527 20:56:56,101][Logging$class:68] Property metadata.broker.list is overridden to 192.168.0.71:9092,192.168.0.72:9092,192.168.0.73:9092
+[INFO ][20180527 20:56:56,104][Logging$class:68] Property partitioner.class is overridden to cn.itcast.storm.kafka.MyLogPartitioner
+[INFO ][20180527 20:56:56,104][Logging$class:68] Property request.required.acks is overridden to 1
+[INFO ][20180527 20:56:56,104][Logging$class:68] Property serializer.class is overridden to kafka.serializer.StringEncoder
+[INFO ][20180527 20:56:56,781][Logging$class:68] Fetching metadata from broker id:0,host:192.168.0.71,port:9092 with correlation id 0 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 20:56:56,854][Logging$class:68] Connected to 192.168.0.71:9092 for producing
+[INFO ][20180527 20:56:56,905][Logging$class:68] Disconnecting from 192.168.0.71:9092
+[INFO ][20180527 20:56:56,972][Logging$class:68] Connected to CentOS-03:9092 for producing
+[INFO ][20180527 20:57:32,938][Logging$class:68] Verifying properties
+[INFO ][20180527 20:57:32,996][Logging$class:68] Property auto.commit.interval.ms is overridden to 1000
+[INFO ][20180527 20:57:32,999][Logging$class:68] Property auto.offset.reset is overridden to largest
+[INFO ][20180527 20:57:32,999][Logging$class:68] Property group.id is overridden to dashujujiagoushi
+[WARN ][20180527 20:57:33,001][Logging$class:83] Property partition.assignment.strategy is not valid
+[INFO ][20180527 20:57:33,001][Logging$class:68] Property zookeeper.connect is overridden to 192.168.0.71:9092,192.168.0.72:9092,192.168.0.73:9092
+[INFO ][20180527 20:57:33,613][Logging$class:68] [dashujujiagoushi_SuperWang-1527425853604-542d6b80], Connecting to zookeeper instance at 192.168.0.71:9092,192.168.0.72:9092,192.168.0.73:9092
+[INFO ][20180527 20:57:33,629][ZkEventThread:64] Starting ZkClient event thread.
+[INFO ][20180527 20:57:33,654][Environment:100] Client environment:zookeeper.version=3.4.5-1392090, built on 09/30/2012 17:52 GMT
+[INFO ][20180527 20:57:33,655][Environment:100] Client environment:host.name=SuperWang
+[INFO ][20180527 20:57:33,655][Environment:100] Client environment:java.version=1.8.0_111
+[INFO ][20180527 20:57:33,655][Environment:100] Client environment:java.vendor=Oracle Corporation
+[INFO ][20180527 20:57:33,656][Environment:100] Client environment:java.home=D:\OpenSource\jdk1.8.0\jre
+[INFO ][20180527 20:57:33,656][Environment:100] Client environment:java.class.path=E:\WorkSpace\Eclipse4.6\StudyProject\target\classes;E:\WorkSpace\Maven\org\jsoup\jsoup\1.9.1\jsoup-1.9.1.jar;E:\WorkSpace\Maven\net\sourceforge\htmlunit\htmlunit\2.18\htmlunit-2.18.jar;E:\WorkSpace\Maven\xalan\xalan\2.7.1\xalan-2.7.1.jar;E:\WorkSpace\Maven\xalan\serializer\2.7.1\serializer-2.7.1.jar;E:\WorkSpace\Maven\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar;E:\WorkSpace\Maven\commons-collections\commons-collections\3.2\commons-collections-3.2.jar;E:\WorkSpace\Maven\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar;E:\WorkSpace\Maven\org\apache\httpcomponents\httpclient\4.5\httpclient-4.5.jar;E:\WorkSpace\Maven\org\apache\httpcomponents\httpcore\4.4\httpcore-4.4.jar;E:\WorkSpace\Maven\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar;E:\WorkSpace\Maven\commons-codec\commons-codec\1.8\commons-codec-1.8.jar;E:\WorkSpace\Maven\org\apache\httpcomponents\httpmime\4.5\httpmime-4.5.jar;E:\WorkSpace\Maven\net\sourceforge\htmlunit\htmlunit-core-js\2.17\htmlunit-core-js-2.17.jar;E:\WorkSpace\Maven\xerces\xercesImpl\2.11.0\xercesImpl-2.11.0.jar;E:\WorkSpace\Maven\net\sourceforge\nekohtml\nekohtml\1.9.22\nekohtml-1.9.22.jar;E:\WorkSpace\Maven\net\sourceforge\cssparser\cssparser\0.9.16\cssparser-0.9.16.jar;E:\WorkSpace\Maven\org\w3c\css\sac\1.3\sac-1.3.jar;E:\WorkSpace\Maven\commons-io\commons-io\2.0.1\commons-io-2.0.1.jar;E:\WorkSpace\Maven\org\eclipse\jetty\websocket\websocket-client\9.2.12.v20150709\websocket-client-9.2.12.v20150709.jar;E:\WorkSpace\Maven\org\eclipse\jetty\jetty-util\9.2.12.v20150709\jetty-util-9.2.12.v20150709.jar;E:\WorkSpace\Maven\org\eclipse\jetty\jetty-io\9.2.12.v20150709\jetty-io-9.2.12.v20150709.jar;E:\WorkSpace\Maven\org\eclipse\jetty\websocket\websocket-common\9.2.12.v20150709\websocket-common-9.2.12.v20150709.jar;E:\WorkSpace\Maven\org\eclipse\jetty\websocket\websocket-api\9.2.12.v20150709\websocket-api-9.2.12.v20150709.jar;E:\WorkSpace\Maven\antlr\antlr\2.7.6\antlr-2.7.6.jar;E:\WorkSpace\Maven\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;E:\WorkSpace\Maven\org\aspectj\aspectjweaver\1.7.3\aspectjweaver-1.7.3.jar;E:\WorkSpace\Maven\cglib\cglib\2.2.2\cglib-2.2.2.jar;E:\WorkSpace\Maven\asm\asm\3.3.1\asm-3.3.1.jar;E:\WorkSpace\Maven\net\sf\json-lib\json-lib\2.3\json-lib-2.3-jdk15.jar;E:\WorkSpace\Maven\commons-beanutils\commons-beanutils\1.8.0\commons-beanutils-1.8.0.jar;E:\WorkSpace\Maven\commons-lang\commons-lang\2.4\commons-lang-2.4.jar;E:\WorkSpace\Maven\net\sf\ezmorph\ezmorph\1.0.6\ezmorph-1.0.6.jar;E:\WorkSpace\Maven\org\codehaus\jackson\jackson-core-asl\1.9.13\jackson-core-asl-1.9.13.jar;E:\WorkSpace\Maven\org\codehaus\jackson\jackson-mapper-asl\1.9.13\jackson-mapper-asl-1.9.13.jar;E:\WorkSpace\Maven\ognl\ognl\3.0.6\ognl-3.0.6.jar;E:\WorkSpace\Maven\javassist\javassist\3.12.1.GA\javassist-3.12.1.GA.jar;E:\WorkSpace\Maven\oro\oro\2.0.8\oro-2.0.8.jar;E:\WorkSpace\Maven\commons-net\commons-net\3.2\commons-net-3.2.jar;E:\WorkSpace\Maven\commons-digester\commons-digester\2.0\commons-digester-2.0.jar;E:\WorkSpace\Maven\commons-fileupload\commons-fileupload\1.3.1\commons-fileupload-1.3.1.jar;E:\WorkSpace\Maven\commons-validator\commons-validator\1.1.4\commons-validator-1.1.4.jar;E:\WorkSpace\Maven\commons-cli\commons-cli\1.2\commons-cli-1.2.jar;E:\WorkSpace\Maven\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;E:\WorkSpace\Maven\jstl\jstl\1.2\jstl-1.2.jar;E:\WorkSpace\Maven\javax\transaction\jta\1.1\jta-1.1.jar;E:\WorkSpace\Maven\log4j\log4j\1.2.17\log4j-1.2.17.jar;E:\WorkSpace\Maven\org\slf4j\slf4j-api\1.7.5\slf4j-api-1.7.5.jar;E:\WorkSpace\Maven\org\slf4j\slf4j-log4j12\1.7.5\slf4j-log4j12-1.7.5.jar;E:\WorkSpace\Maven\net\sourceforge\jexcelapi\jxl\2.6.12\jxl-2.6.12.jar;E:\WorkSpace\Maven\org\jdom\jdom\1.1.3\jdom-1.1.3.jar;E:\WorkSpace\Maven\jaxen\jaxen\1.1.1\jaxen-1.1.1.jar;E:\WorkSpace\Maven\jdom\jdom\1.0\jdom-1.0.jar;E:\WorkSpace\Maven\xom\xom\1.0\xom-1.0.jar;E:\WorkSpace\Maven\xerces\xmlParserAPIs\2.6.2\xmlParserAPIs-2.6.2.jar;E:\WorkSpace\Maven\com\ibm\icu\icu4j\2.6.1\icu4j-2.6.1.jar;E:\WorkSpace\Maven\redis\clients\jedis\2.9.0\jedis-2.9.0.jar;E:\WorkSpace\Maven\org\apache\commons\commons-pool2\2.4.2\commons-pool2-2.4.2.jar;E:\WorkSpace\Maven\org\apache\ant\ant\1.10.1\ant-1.10.1.jar;E:\WorkSpace\Maven\org\apache\ant\ant-launcher\1.10.1\ant-launcher-1.10.1.jar;E:\WorkSpace\Maven\org\apache\zookeeper\zookeeper\3.4.5\zookeeper-3.4.5.jar;E:\WorkSpace\Maven\jline\jline\0.9.94\jline-0.9.94.jar;E:\WorkSpace\Maven\org\jboss\netty\netty\3.2.5.Final\netty-3.2.5.Final.jar;E:\WorkSpace\Maven\com\101tec\zkclient\0.3\zkclient-0.3.jar;E:\WorkSpace\Maven\org\springframework\spring-aop\4.2.9.RELEASE\spring-aop-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-beans\4.2.9.RELEASE\spring-beans-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-core\4.2.9.RELEASE\spring-core-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-aspects\4.2.9.RELEASE\spring-aspects-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-context\4.2.9.RELEASE\spring-context-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-expression\4.2.9.RELEASE\spring-expression-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-context-support\4.2.9.RELEASE\spring-context-support-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-instrument\4.2.9.RELEASE\spring-instrument-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-instrument-tomcat\4.2.9.RELEASE\spring-instrument-tomcat-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-jdbc\4.2.9.RELEASE\spring-jdbc-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-tx\4.2.9.RELEASE\spring-tx-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-jms\4.2.9.RELEASE\spring-jms-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-messaging\4.2.9.RELEASE\spring-messaging-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-orm\4.2.9.RELEASE\spring-orm-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-oxm\4.2.9.RELEASE\spring-oxm-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-web\4.2.9.RELEASE\spring-web-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-webmvc\4.2.9.RELEASE\spring-webmvc-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-webmvc-portlet\4.2.9.RELEASE\spring-webmvc-portlet-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\amqp\spring-rabbit\1.7.5.RELEASE\spring-rabbit-1.7.5.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\retry\spring-retry\1.2.1.RELEASE\spring-retry-1.2.1.RELEASE.jar;E:\WorkSpace\Maven\com\rabbitmq\http-client\1.1.1.RELEASE\http-client-1.1.1.RELEASE.jar;E:\WorkSpace\Maven\com\fasterxml\jackson\core\jackson-databind\2.8.4\jackson-databind-2.8.4.jar;E:\WorkSpace\Maven\com\fasterxml\jackson\core\jackson-annotations\2.8.0\jackson-annotations-2.8.0.jar;E:\WorkSpace\Maven\com\fasterxml\jackson\core\jackson-core\2.8.4\jackson-core-2.8.4.jar;E:\WorkSpace\Maven\org\springframework\amqp\spring-amqp\1.7.5.RELEASE\spring-amqp-1.7.5.RELEASE.jar;E:\WorkSpace\Maven\com\rabbitmq\amqp-client\4.2.0\amqp-client-4.2.0.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-common\2.6.5\hadoop-common-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-annotations\2.6.5\hadoop-annotations-2.6.5.jar;D:\OpenSource\jdk1.8.0\lib\tools.jar;E:\WorkSpace\Maven\com\google\guava\guava\11.0.2\guava-11.0.2.jar;E:\WorkSpace\Maven\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;E:\WorkSpace\Maven\org\apache\commons\commons-math3\3.1.1\commons-math3-3.1.1.jar;E:\WorkSpace\Maven\xmlenc\xmlenc\0.52\xmlenc-0.52.jar;E:\WorkSpace\Maven\commons-httpclient\commons-httpclient\3.1\commons-httpclient-3.1.jar;E:\WorkSpace\Maven\javax\servlet\servlet-api\2.5\servlet-api-2.5.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jetty\6.1.26\jetty-6.1.26.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jetty-util\6.1.26\jetty-util-6.1.26.jar;E:\WorkSpace\Maven\com\sun\jersey\jersey-core\1.9\jersey-core-1.9.jar;E:\WorkSpace\Maven\com\sun\jersey\jersey-json\1.9\jersey-json-1.9.jar;E:\WorkSpace\Maven\org\codehaus\jettison\jettison\1.1\jettison-1.1.jar;E:\WorkSpace\Maven\com\sun\xml\bind\jaxb-impl\2.2.3-1\jaxb-impl-2.2.3-1.jar;E:\WorkSpace\Maven\javax\xml\bind\jaxb-api\2.2.2\jaxb-api-2.2.2.jar;E:\WorkSpace\Maven\javax\xml\stream\stax-api\1.0-2\stax-api-1.0-2.jar;E:\WorkSpace\Maven\javax\activation\activation\1.1\activation-1.1.jar;E:\WorkSpace\Maven\org\codehaus\jackson\jackson-jaxrs\1.8.8\jackson-jaxrs-1.8.8.jar;E:\WorkSpace\Maven\org\codehaus\jackson\jackson-xc\1.8.3\jackson-xc-1.8.3.jar;E:\WorkSpace\Maven\com\sun\jersey\jersey-server\1.9\jersey-server-1.9.jar;E:\WorkSpace\Maven\tomcat\jasper-compiler\5.5.23\jasper-compiler-5.5.23.jar;E:\WorkSpace\Maven\tomcat\jasper-runtime\5.5.23\jasper-runtime-5.5.23.jar;E:\WorkSpace\Maven\commons-el\commons-el\1.0\commons-el-1.0.jar;E:\WorkSpace\Maven\javax\servlet\jsp\jsp-api\2.1\jsp-api-2.1.jar;E:\WorkSpace\Maven\net\java\dev\jets3t\jets3t\0.9.0\jets3t-0.9.0.jar;E:\WorkSpace\Maven\com\jamesmurty\utils\java-xmlbuilder\0.4\java-xmlbuilder-0.4.jar;E:\WorkSpace\Maven\commons-configuration\commons-configuration\1.6\commons-configuration-1.6.jar;E:\WorkSpace\Maven\commons-beanutils\commons-beanutils-core\1.8.0\commons-beanutils-core-1.8.0.jar;E:\WorkSpace\Maven\org\apache\avro\avro\1.7.4\avro-1.7.4.jar;E:\WorkSpace\Maven\com\thoughtworks\paranamer\paranamer\2.3\paranamer-2.3.jar;E:\WorkSpace\Maven\org\xerial\snappy\snappy-java\1.0.5\snappy-java-1.0.5.jar;E:\WorkSpace\Maven\org\apache\commons\commons-compress\1.4.1\commons-compress-1.4.1.jar;E:\WorkSpace\Maven\org\tukaani\xz\1.0\xz-1.0.jar;E:\WorkSpace\Maven\com\google\protobuf\protobuf-java\2.5.0\protobuf-java-2.5.0.jar;E:\WorkSpace\Maven\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-auth\2.6.5\hadoop-auth-2.6.5.jar;E:\WorkSpace\Maven\org\apache\directory\server\apacheds-kerberos-codec\2.0.0-M15\apacheds-kerberos-codec-2.0.0-M15.jar;E:\WorkSpace\Maven\org\apache\directory\server\apacheds-i18n\2.0.0-M15\apacheds-i18n-2.0.0-M15.jar;E:\WorkSpace\Maven\org\apache\directory\api\api-asn1-api\1.0.0-M20\api-asn1-api-1.0.0-M20.jar;E:\WorkSpace\Maven\org\apache\directory\api\api-util\1.0.0-M20\api-util-1.0.0-M20.jar;E:\WorkSpace\Maven\org\apache\curator\curator-framework\2.6.0\curator-framework-2.6.0.jar;E:\WorkSpace\Maven\org\apache\curator\curator-client\2.6.0\curator-client-2.6.0.jar;E:\WorkSpace\Maven\com\jcraft\jsch\0.1.42\jsch-0.1.42.jar;E:\WorkSpace\Maven\org\apache\curator\curator-recipes\2.6.0\curator-recipes-2.6.0.jar;E:\WorkSpace\Maven\org\htrace\htrace-core\3.0.4\htrace-core-3.0.4.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-client\2.6.5\hadoop-client-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-hdfs\2.6.5\hadoop-hdfs-2.6.5.jar;E:\WorkSpace\Maven\io\netty\netty\3.6.2.Final\netty-3.6.2.Final.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-app\2.6.5\hadoop-mapreduce-client-app-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-common\2.6.5\hadoop-mapreduce-client-common-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-common\2.6.5\hadoop-yarn-common-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-api\2.6.5\hadoop-yarn-api-2.6.5.jar;E:\WorkSpace\Maven\com\sun\jersey\jersey-client\1.9\jersey-client-1.9.jar;E:\WorkSpace\Maven\com\google\inject\guice\3.0\guice-3.0.jar;E:\WorkSpace\Maven\javax\inject\javax.inject\1\javax.inject-1.jar;E:\WorkSpace\Maven\com\sun\jersey\contribs\jersey-guice\1.9\jersey-guice-1.9.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-client\2.6.5\hadoop-yarn-client-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-core\2.6.5\hadoop-mapreduce-client-core-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-server-common\2.6.5\hadoop-yarn-server-common-2.6.5.jar;E:\WorkSpace\Maven\org\fusesource\leveldbjni\leveldbjni-all\1.8\leveldbjni-all-1.8.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-shuffle\2.6.5\hadoop-mapreduce-client-shuffle-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-jobclient\2.6.5\hadoop-mapreduce-client-jobclient-2.6.5.jar;E:\WorkSpace\Maven\commons-daemon\commons-daemon\1.0.13\commons-daemon-1.0.13.jar;E:\WorkSpace\Maven\org\apache\hive\hive-exec\1.2.1\hive-exec-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-ant\1.2.1\hive-ant-1.2.1.jar;E:\WorkSpace\Maven\org\apache\velocity\velocity\1.5\velocity-1.5.jar;E:\WorkSpace\Maven\org\apache\hive\hive-metastore\1.2.1\hive-metastore-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-serde\1.2.1\hive-serde-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-common\1.2.1\hive-common-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-shims\1.2.1\hive-shims-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\shims\hive-shims-common\1.2.1\hive-shims-common-1.2.1.jar;E:\WorkSpace\Maven\log4j\apache-log4j-extras\1.2.17\apache-log4j-extras-1.2.17.jar;E:\WorkSpace\Maven\org\apache\thrift\libthrift\0.9.2\libthrift-0.9.2.jar;E:\WorkSpace\Maven\org\apache\hive\shims\hive-shims-0.20S\1.2.1\hive-shims-0.20S-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\shims\hive-shims-0.23\1.2.1\hive-shims-0.23-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-server-resourcemanager\2.6.0\hadoop-yarn-server-resourcemanager-2.6.0.jar;E:\WorkSpace\Maven\com\google\inject\extensions\guice-servlet\3.0\guice-servlet-3.0.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-server-applicationhistoryservice\2.6.0\hadoop-yarn-server-applicationhistoryservice-2.6.0.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-server-web-proxy\2.6.0\hadoop-yarn-server-web-proxy-2.6.0.jar;E:\WorkSpace\Maven\org\apache\hive\shims\hive-shims-scheduler\1.2.1\hive-shims-scheduler-1.2.1.jar;E:\WorkSpace\Maven\joda-time\joda-time\2.6\joda-time-2.6.jar;E:\WorkSpace\Maven\org\json\json\20090211\json-20090211.jar;E:\WorkSpace\Maven\net\sf\opencsv\opencsv\2.3\opencsv-2.3.jar;E:\WorkSpace\Maven\com\twitter\parquet-hadoop-bundle\1.6.0\parquet-hadoop-bundle-1.6.0.jar;E:\WorkSpace\Maven\com\jolbox\bonecp\0.8.0.RELEASE\bonecp-0.8.0.RELEASE.jar;E:\WorkSpace\Maven\org\apache\derby\derby\10.10.2.0\derby-10.10.2.0.jar;E:\WorkSpace\Maven\org\datanucleus\datanucleus-api-jdo\3.2.6\datanucleus-api-jdo-3.2.6.jar;E:\WorkSpace\Maven\org\datanucleus\datanucleus-core\3.2.10\datanucleus-core-3.2.10.jar;E:\WorkSpace\Maven\org\datanucleus\datanucleus-rdbms\3.2.9\datanucleus-rdbms-3.2.9.jar;E:\WorkSpace\Maven\commons-pool\commons-pool\1.6\commons-pool-1.6.jar;E:\WorkSpace\Maven\commons-dbcp\commons-dbcp\1.4\commons-dbcp-1.4.jar;E:\WorkSpace\Maven\javax\jdo\jdo-api\3.0.1\jdo-api-3.0.1.jar;E:\WorkSpace\Maven\org\antlr\antlr-runtime\3.4\antlr-runtime-3.4.jar;E:\WorkSpace\Maven\org\antlr\stringtemplate\3.2.1\stringtemplate-3.2.1.jar;E:\WorkSpace\Maven\org\apache\thrift\libfb303\0.9.2\libfb303-0.9.2.jar;E:\WorkSpace\Maven\org\antlr\ST4\4.0.4\ST4-4.0.4.jar;E:\WorkSpace\Maven\org\apache\ivy\ivy\2.4.0\ivy-2.4.0.jar;E:\WorkSpace\Maven\org\codehaus\groovy\groovy-all\2.1.6\groovy-all-2.1.6.jar;E:\WorkSpace\Maven\org\apache\calcite\calcite-core\1.2.0-incubating\calcite-core-1.2.0-incubating.jar;E:\WorkSpace\Maven\org\apache\calcite\calcite-avatica\1.2.0-incubating\calcite-avatica-1.2.0-incubating.jar;E:\WorkSpace\Maven\org\apache\calcite\calcite-linq4j\1.2.0-incubating\calcite-linq4j-1.2.0-incubating.jar;E:\WorkSpace\Maven\net\hydromatic\eigenbase-properties\1.1.5\eigenbase-properties-1.1.5.jar;E:\WorkSpace\Maven\org\codehaus\janino\janino\2.7.6\janino-2.7.6.jar;E:\WorkSpace\Maven\org\codehaus\janino\commons-compiler\2.7.6\commons-compiler-2.7.6.jar;E:\WorkSpace\Maven\org\pentaho\pentaho-aggdesigner-algorithm\5.1.5-jhyde\pentaho-aggdesigner-algorithm-5.1.5-jhyde.jar;E:\WorkSpace\Maven\stax\stax-api\1.0.1\stax-api-1.0.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-jdbc\1.2.1\hive-jdbc-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-service\1.2.1\hive-service-1.2.1.jar;E:\WorkSpace\Maven\net\sf\jpam\jpam\1.1\jpam-1.1.jar;E:\WorkSpace\Maven\org\eclipse\jetty\aggregate\jetty-all\7.6.0.v20120127\jetty-all-7.6.0.v20120127.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-jta_1.1_spec\1.1.1\geronimo-jta_1.1_spec-1.1.1.jar;E:\WorkSpace\Maven\javax\mail\mail\1.4.7\mail-1.4.7.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-jaspic_1.0_spec\1.0\geronimo-jaspic_1.0_spec-1.0.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-annotation_1.0_spec\1.1.1\geronimo-annotation_1.0_spec-1.1.1.jar;E:\WorkSpace\Maven\asm\asm-commons\3.1\asm-commons-3.1.jar;E:\WorkSpace\Maven\asm\asm-tree\3.1\asm-tree-3.1.jar;E:\WorkSpace\Maven\com\github\stephenc\findbugs\findbugs-annotations\1.3.9-1\findbugs-annotations-1.3.9-1.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-client\0.99.2\hbase-client-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-annotations\0.99.2\hbase-annotations-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-common\0.99.2\hbase-common-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-protocol\0.99.2\hbase-protocol-0.99.2.jar;E:\WorkSpace\Maven\io\netty\netty-all\4.0.24.Final\netty-all-4.0.24.Final.jar;E:\WorkSpace\Maven\org\jruby\joni\joni\2.1.2\joni-2.1.2.jar;E:\WorkSpace\Maven\org\jruby\jcodings\jcodings\1.0.8\jcodings-1.0.8.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-server\0.99.2\hbase-server-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-prefix-tree\0.99.2\hbase-prefix-tree-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-common\0.99.2\hbase-common-0.99.2-tests.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-hadoop-compat\0.99.2\hbase-hadoop-compat-0.99.2.jar;E:\WorkSpace\Maven\org\apache\commons\commons-math\2.2\commons-math-2.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-hadoop2-compat\0.99.2\hbase-hadoop2-compat-0.99.2.jar;E:\WorkSpace\Maven\com\yammer\metrics\metrics-core\2.2.0\metrics-core-2.2.0.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jetty-sslengine\6.1.26\jetty-sslengine-6.1.26.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jsp-2.1\6.1.14\jsp-2.1-6.1.14.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jsp-api-2.1\6.1.14\jsp-api-2.1-6.1.14.jar;E:\WorkSpace\Maven\org\mortbay\jetty\servlet-api-2.5\6.1.14\servlet-api-2.5-6.1.14.jar;E:\WorkSpace\Maven\org\jamon\jamon-runtime\2.3.1\jamon-runtime-2.3.1.jar;E:\WorkSpace\Maven\com\lmax\disruptor\3.3.0\disruptor-3.3.0.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-core\4.10.3\lucene-core-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-queryparser\4.10.3\lucene-queryparser-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-queries\4.10.3\lucene-queries-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-sandbox\4.10.3\lucene-sandbox-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-analyzers-common\4.10.3\lucene-analyzers-common-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-analyzers-smartcn\4.10.3\lucene-analyzers-smartcn-4.10.3.jar;E:\WorkSpace\Maven\com\janeluo\ikanalyzer\2012_u6\ikanalyzer-2012_u6.jar;E:\WorkSpace\Maven\org\apache\solr\solr-solrj\4.10.3\solr-solrj-4.10.3.jar;E:\WorkSpace\Maven\org\codehaus\woodstox\wstx-asl\3.2.7\wstx-asl-3.2.7.jar;E:\WorkSpace\Maven\org\noggit\noggit\0.5\noggit-0.5.jar;E:\WorkSpace\Maven\org\mybatis\mybatis\3.2.8\mybatis-3.2.8.jar;E:\WorkSpace\Maven\org\mybatis\mybatis-spring\1.2.2\mybatis-spring-1.2.2.jar;E:\WorkSpace\Maven\mysql\mysql-connector-java\5.1.32\mysql-connector-java-5.1.32.jar;E:\WorkSpace\Maven\org\apache\kafka\kafka_2.9.2\0.8.1\kafka_2.9.2-0.8.1.jar;E:\WorkSpace\Maven\org\scala-lang\scala-library\2.9.2\scala-library-2.9.2.jar;E:\WorkSpace\Maven\com\yammer\metrics\metrics-annotation\2.2.0\metrics-annotation-2.2.0.jar;E:\WorkSpace\Maven\net\sf\jopt-simple\jopt-simple\3.2\jopt-simple-3.2.jar;E:\WorkSpace\Maven\org\mongodb\mongo-java-driver\3.4.2\mongo-java-driver-3.4.2.jar;E:\WorkSpace\Maven\org\hibernate\hibernate-core\5.1.2.Final\hibernate-core-5.1.2.Final.jar;E:\WorkSpace\Maven\org\jboss\logging\jboss-logging\3.3.0.Final\jboss-logging-3.3.0.Final.jar;E:\WorkSpace\Maven\org\hibernate\javax\persistence\hibernate-jpa-2.1-api\1.0.0.Final\hibernate-jpa-2.1-api-1.0.0.Final.jar;E:\WorkSpace\Maven\org\javassist\javassist\3.20.0-GA\javassist-3.20.0-GA.jar;E:\WorkSpace\Maven\org\jboss\jandex\2.0.0.Final\jandex-2.0.0.Final.jar;E:\WorkSpace\Maven\com\fasterxml\classmate\1.3.0\classmate-1.3.0.jar;E:\WorkSpace\Maven\org\hibernate\common\hibernate-commons-annotations\5.0.1.Final\hibernate-commons-annotations-5.0.1.Final.jar;E:\WorkSpace\Maven\org\activiti\activiti-engine\5.22.0\activiti-engine-5.22.0.jar;E:\WorkSpace\Maven\org\activiti\activiti-bpmn-converter\5.22.0\activiti-bpmn-converter-5.22.0.jar;E:\WorkSpace\Maven\org\activiti\activiti-bpmn-model\5.22.0\activiti-bpmn-model-5.22.0.jar;E:\WorkSpace\Maven\org\slf4j\jcl-over-slf4j\1.7.6\jcl-over-slf4j-1.7.6.jar;E:\WorkSpace\Maven\org\activiti\activiti-process-validation\5.22.0\activiti-process-validation-5.22.0.jar;E:\WorkSpace\Maven\org\activiti\activiti-image-generator\5.22.0\activiti-image-generator-5.22.0.jar;E:\WorkSpace\Maven\org\apache\commons\commons-email\1.4\commons-email-1.4.jar;E:\WorkSpace\Maven\com\sun\mail\javax.mail\1.5.2\javax.mail-1.5.2.jar;E:\WorkSpace\Maven\org\apache\tomcat\jsp-api\6.0.37\jsp-api-6.0.37.jar;E:\WorkSpace\Maven\org\apache\tomcat\el-api\6.0.37\el-api-6.0.37.jar;E:\WorkSpace\Maven\org\apache\tomcat\servlet-api\6.0.37\servlet-api-6.0.37.jar;E:\WorkSpace\Maven\org\freemarker\freemarker\2.3.19\freemarker-2.3.19.jar;E:\WorkSpace\Maven\com\alibaba\druid\1.0.12\druid-1.0.12.jar;D:\OpenSource\jdk1.8.0\lib\jconsole.jar;E:\WorkSpace\Maven\com\alibaba\fastjson\1.1.41\fastjson-1.1.41.jar;E:\WorkSpace\Maven\org\apache\activemq\activemq-all\5.11.1\activemq-all-5.11.1.jar;E:\WorkSpace\Maven\org\apache\activemq\activemq-pool\5.11.1\activemq-pool-5.11.1.jar;E:\WorkSpace\Maven\org\apache\activemq\activemq-jms-pool\5.11.1\activemq-jms-pool-5.11.1.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-jms_1.1_spec\1.1.1\geronimo-jms_1.1_spec-1.1.1.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-jta_1.0.1B_spec\1.0.1\geronimo-jta_1.0.1B_spec-1.0.1.jar;E:\WorkSpace\Maven\org\apache\activemq\activemq-client\5.11.1\activemq-client-5.11.1.jar;E:\WorkSpace\Maven\org\fusesource\hawtbuf\hawtbuf\1.11\hawtbuf-1.11.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-j2ee-management_1.1_spec\1.0.1\geronimo-j2ee-management_1.1_spec-1.0.1.jar;E:\WorkSpace\Maven\org\mozilla\rhino\1.7R4\rhino-1.7R4.jar;E:\WorkSpace\Maven\com\yahoo\platform\yui\yuicompressor\2.4.8\yuicompressor-2.4.8.jar;E:\WorkSpace\Maven\rhino\js\1.7R2\js-1.7R2.jar;E:\WorkSpace\Maven\net\sf\ehcache\ehcache\2.10.4\ehcache-2.10.4.jar
+[INFO ][20180527 20:57:33,659][Environment:100] Client environment:java.library.path=D:\OpenSource\jdk1.8.0\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:/OpenSource/jdk1.8.0/jre/bin/server;D:/OpenSource/jdk1.8.0/jre/bin;D:/OpenSource/jdk1.8.0/jre/lib/amd64;D:\SoftWare\nSC\python;D:\SoftWare\nSC\bin;D:\app\SuperWang\product\11.2.0\dbhome_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\OpenSource\Subversion\bin;D:\SoftWare\StorageExecutive;D:\OpenSource\hadoop-2.6.5\bin;D:\OpenSource\TortoiesSVN\bin;C:\Users\SuperWang\.app\;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;%JAVA_HOME%\bin;%MYSQL_HOME%\bin;%SVN_HOME%\bin;%MAVEN_HOME%\bin;%FFMEG_HOME%\bin;;D:\OpenSource\eclipse4.6;;.
+[INFO ][20180527 20:57:33,659][Environment:100] Client environment:java.io.tmpdir=E:\SUPERW~1\Temp\
+[INFO ][20180527 20:57:33,661][Environment:100] Client environment:java.compiler=<NA>
+[INFO ][20180527 20:57:33,662][Environment:100] Client environment:os.name=Windows 10
+[INFO ][20180527 20:57:33,662][Environment:100] Client environment:os.arch=amd64
+[INFO ][20180527 20:57:33,662][Environment:100] Client environment:os.version=10.0
+[INFO ][20180527 20:57:33,663][Environment:100] Client environment:user.name=SuperWang
+[INFO ][20180527 20:57:33,663][Environment:100] Client environment:user.home=C:\Users\SuperWang
+[INFO ][20180527 20:57:33,663][Environment:100] Client environment:user.dir=E:\WorkSpace\Eclipse4.6\StudyProject
+[INFO ][20180527 20:57:33,665][ZooKeeper:438] Initiating client connection, connectString=192.168.0.71:9092,192.168.0.72:9092,192.168.0.73:9092 sessionTimeout=6000 watcher=org.I0Itec.zkclient.ZkClient@4fe767f3
+[INFO ][20180527 20:57:33,775][ClientCnxn$SendThread:966] Opening socket connection to server CentOS-02/192.168.0.72:9092. Will not attempt to authenticate using SASL (unknown error)
+[INFO ][20180527 20:57:33,777][ClientCnxn$SendThread:849] Socket connection established to CentOS-02/192.168.0.72:9092, initiating session
+[INFO ][20180527 20:57:35,778][ClientCnxn$SendThread:1083] Client session timed out, have not heard from server in 2001ms for sessionid 0x0, closing socket connection and attempting reconnect
+[INFO ][20180527 20:57:36,213][ClientCnxn$SendThread:966] Opening socket connection to server CentOS-01/192.168.0.71:9092. Will not attempt to authenticate using SASL (unknown error)
+[INFO ][20180527 20:57:36,214][ClientCnxn$SendThread:849] Socket connection established to CentOS-01/192.168.0.71:9092, initiating session
+[INFO ][20180527 20:57:38,215][ClientCnxn$SendThread:1083] Client session timed out, have not heard from server in 2001ms for sessionid 0x0, closing socket connection and attempting reconnect
+[INFO ][20180527 20:57:38,874][ClientCnxn$SendThread:966] Opening socket connection to server CentOS-03/192.168.0.73:9092. Will not attempt to authenticate using SASL (unknown error)
+[INFO ][20180527 20:57:38,876][ClientCnxn$SendThread:849] Socket connection established to CentOS-03/192.168.0.73:9092, initiating session
+[INFO ][20180527 20:57:39,770][ZkEventThread:82] Terminate ZkClient event thread.
+[INFO ][20180527 20:57:40,979][ZooKeeper:684] Session: 0x0 closed
+[INFO ][20180527 20:57:40,979][ClientCnxn$EventThread:509] EventThread shut down
+[INFO ][20180527 20:59:14,146][Logging$class:68] Verifying properties
+[INFO ][20180527 20:59:14,188][Logging$class:68] Property metadata.broker.list is overridden to 192.168.0.71:9092,192.168.0.72:9092,192.168.0.73:9092
+[INFO ][20180527 20:59:14,191][Logging$class:68] Property partitioner.class is overridden to cn.itcast.storm.kafka.MyLogPartitioner
+[INFO ][20180527 20:59:14,191][Logging$class:68] Property request.required.acks is overridden to 1
+[INFO ][20180527 20:59:14,191][Logging$class:68] Property serializer.class is overridden to kafka.serializer.StringEncoder
+[INFO ][20180527 20:59:14,823][Logging$class:68] Fetching metadata from broker id:2,host:192.168.0.73,port:9092 with correlation id 0 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 20:59:14,883][Logging$class:68] Connected to 192.168.0.73:9092 for producing
+[INFO ][20180527 20:59:14,921][Logging$class:68] Disconnecting from 192.168.0.73:9092
+[ERROR][20180527 20:59:17,241][Logging$class:103] Producer connection to CentOS-03:9092 unsuccessful
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[WARN ][20180527 20:59:17,253][Logging$class:89] Failed to send producer request with correlation id 2 to broker 2 with data for partitions [orderMq,1]
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[INFO ][20180527 20:59:17,268][Logging$class:68] Back off for 100 ms before retrying send. Remaining retries = 3
+[INFO ][20180527 20:59:17,370][Logging$class:68] Fetching metadata from broker id:0,host:192.168.0.71,port:9092 with correlation id 3 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 20:59:17,371][Logging$class:68] Connected to 192.168.0.71:9092 for producing
+[INFO ][20180527 20:59:17,375][Logging$class:68] Disconnecting from 192.168.0.71:9092
+[ERROR][20180527 20:59:17,377][Logging$class:103] Producer connection to CentOS-03:9092 unsuccessful
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[WARN ][20180527 20:59:17,379][Logging$class:89] Failed to send producer request with correlation id 5 to broker 2 with data for partitions [orderMq,1]
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[INFO ][20180527 20:59:17,382][Logging$class:68] Back off for 100 ms before retrying send. Remaining retries = 2
+[INFO ][20180527 20:59:17,483][Logging$class:68] Fetching metadata from broker id:1,host:192.168.0.72,port:9092 with correlation id 6 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 20:59:17,485][Logging$class:68] Connected to 192.168.0.72:9092 for producing
+[INFO ][20180527 20:59:17,491][Logging$class:68] Disconnecting from 192.168.0.72:9092
+[ERROR][20180527 20:59:17,494][Logging$class:103] Producer connection to CentOS-03:9092 unsuccessful
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[WARN ][20180527 20:59:17,495][Logging$class:89] Failed to send producer request with correlation id 8 to broker 2 with data for partitions [orderMq,1]
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[INFO ][20180527 20:59:17,495][Logging$class:68] Back off for 100 ms before retrying send. Remaining retries = 1
+[INFO ][20180527 20:59:17,597][Logging$class:68] Fetching metadata from broker id:0,host:192.168.0.71,port:9092 with correlation id 9 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 20:59:17,598][Logging$class:68] Connected to 192.168.0.71:9092 for producing
+[INFO ][20180527 20:59:17,601][Logging$class:68] Disconnecting from 192.168.0.71:9092
+[ERROR][20180527 20:59:17,603][Logging$class:103] Producer connection to CentOS-03:9092 unsuccessful
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[WARN ][20180527 20:59:17,604][Logging$class:89] Failed to send producer request with correlation id 11 to broker 2 with data for partitions [orderMq,1]
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[INFO ][20180527 20:59:17,605][Logging$class:68] Back off for 100 ms before retrying send. Remaining retries = 0
+[INFO ][20180527 20:59:17,705][Logging$class:68] Fetching metadata from broker id:0,host:192.168.0.71,port:9092 with correlation id 12 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 20:59:17,707][Logging$class:68] Connected to 192.168.0.71:9092 for producing
+[INFO ][20180527 20:59:17,711][Logging$class:68] Disconnecting from 192.168.0.71:9092
+[ERROR][20180527 20:59:17,714][Logging$class:97] Failed to send requests for topics orderMq with correlation ids in [0,12]
+[INFO ][20180527 21:04:36,700][Logging$class:68] Verifying properties
+[INFO ][20180527 21:04:36,749][Logging$class:68] Property metadata.broker.list is overridden to 192.168.0.71:9092,192.168.0.72:9092,192.168.0.73:9092
+[INFO ][20180527 21:04:36,752][Logging$class:68] Property partitioner.class is overridden to cn.itcast.storm.kafka.MyLogPartitioner
+[INFO ][20180527 21:04:36,752][Logging$class:68] Property request.required.acks is overridden to 1
+[INFO ][20180527 21:04:36,752][Logging$class:68] Property serializer.class is overridden to kafka.serializer.StringEncoder
+[INFO ][20180527 21:04:37,427][Logging$class:68] Fetching metadata from broker id:2,host:192.168.0.73,port:9092 with correlation id 0 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 21:04:37,494][Logging$class:68] Connected to 192.168.0.73:9092 for producing
+[INFO ][20180527 21:04:37,545][Logging$class:68] Disconnecting from 192.168.0.73:9092
+[ERROR][20180527 21:04:39,874][Logging$class:103] Producer connection to CentOS-03:9092 unsuccessful
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[WARN ][20180527 21:04:39,882][Logging$class:89] Failed to send producer request with correlation id 2 to broker 2 with data for partitions [orderMq,1]
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[INFO ][20180527 21:04:39,892][Logging$class:68] Back off for 100 ms before retrying send. Remaining retries = 3
+[INFO ][20180527 21:04:39,994][Logging$class:68] Fetching metadata from broker id:0,host:192.168.0.71,port:9092 with correlation id 3 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 21:04:39,996][Logging$class:68] Connected to 192.168.0.71:9092 for producing
+[INFO ][20180527 21:04:40,014][Logging$class:68] Disconnecting from 192.168.0.71:9092
+[ERROR][20180527 21:04:40,016][Logging$class:103] Producer connection to CentOS-03:9092 unsuccessful
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[WARN ][20180527 21:04:40,017][Logging$class:89] Failed to send producer request with correlation id 5 to broker 2 with data for partitions [orderMq,1]
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[INFO ][20180527 21:04:40,020][Logging$class:68] Back off for 100 ms before retrying send. Remaining retries = 2
+[INFO ][20180527 21:04:40,121][Logging$class:68] Fetching metadata from broker id:1,host:192.168.0.72,port:9092 with correlation id 6 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 21:04:40,123][Logging$class:68] Connected to 192.168.0.72:9092 for producing
+[INFO ][20180527 21:04:40,154][Logging$class:68] Disconnecting from 192.168.0.72:9092
+[ERROR][20180527 21:04:40,159][Logging$class:103] Producer connection to CentOS-03:9092 unsuccessful
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[WARN ][20180527 21:04:40,162][Logging$class:89] Failed to send producer request with correlation id 8 to broker 2 with data for partitions [orderMq,1]
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[INFO ][20180527 21:04:40,165][Logging$class:68] Back off for 100 ms before retrying send. Remaining retries = 1
+[INFO ][20180527 21:04:40,266][Logging$class:68] Fetching metadata from broker id:1,host:192.168.0.72,port:9092 with correlation id 9 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 21:04:40,268][Logging$class:68] Connected to 192.168.0.72:9092 for producing
+[INFO ][20180527 21:04:40,272][Logging$class:68] Disconnecting from 192.168.0.72:9092
+[ERROR][20180527 21:04:40,274][Logging$class:103] Producer connection to CentOS-03:9092 unsuccessful
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[WARN ][20180527 21:04:40,276][Logging$class:89] Failed to send producer request with correlation id 11 to broker 2 with data for partitions [orderMq,1]
+java.nio.channels.UnresolvedAddressException
+	at sun.nio.ch.Net.checkAddress(Net.java:101)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:622)
+	at kafka.network.BlockingChannel.connect(BlockingChannel.scala:57)
+	at kafka.producer.SyncProducer.connect(SyncProducer.scala:141)
+	at kafka.producer.SyncProducer.getOrMakeConnection(SyncProducer.scala:156)
+	at kafka.producer.SyncProducer.kafka$producer$SyncProducer$$doSend(SyncProducer.scala:68)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.producer.SyncProducer$$anonfun$send$1$$anonfun$apply$mcV$sp$1.apply(SyncProducer.scala:102)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply$mcV$sp(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.producer.SyncProducer$$anonfun$send$1.apply(SyncProducer.scala:101)
+	at kafka.metrics.KafkaTimer.time(KafkaTimer.scala:33)
+	at kafka.producer.SyncProducer.send(SyncProducer.scala:100)
+	at kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$send(DefaultEventHandler.scala:255)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:106)
+	at kafka.producer.async.DefaultEventHandler$$anonfun$dispatchSerializedData$2.apply(DefaultEventHandler.scala:100)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:95)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:772)
+	at scala.collection.mutable.HashTable$$anon$1.foreach(HashTable.scala:157)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:190)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:45)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:95)
+	at kafka.producer.async.DefaultEventHandler.dispatchSerializedData(DefaultEventHandler.scala:100)
+	at kafka.producer.async.DefaultEventHandler.handle(DefaultEventHandler.scala:72)
+	at kafka.producer.Producer.send(Producer.scala:76)
+	at kafka.javaapi.producer.Producer.send(Producer.scala:33)
+	at cn.itcast.storm.kafka.simple.KafkaProducerSimple.main(KafkaProducerSimple.java:79)
+[INFO ][20180527 21:04:40,277][Logging$class:68] Back off for 100 ms before retrying send. Remaining retries = 0
+[INFO ][20180527 21:04:40,378][Logging$class:68] Fetching metadata from broker id:2,host:192.168.0.73,port:9092 with correlation id 12 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 21:04:40,381][Logging$class:68] Connected to 192.168.0.73:9092 for producing
+[INFO ][20180527 21:04:40,391][Logging$class:68] Disconnecting from 192.168.0.73:9092
+[ERROR][20180527 21:04:40,396][Logging$class:97] Failed to send requests for topics orderMq with correlation ids in [0,12]
+[INFO ][20180527 21:05:56,527][Logging$class:68] Verifying properties
+[INFO ][20180527 21:05:56,572][Logging$class:68] Property auto.commit.interval.ms is overridden to 1000
+[INFO ][20180527 21:05:56,575][Logging$class:68] Property auto.offset.reset is overridden to largest
+[INFO ][20180527 21:05:56,575][Logging$class:68] Property group.id is overridden to dashujujiagoushi
+[WARN ][20180527 21:05:56,576][Logging$class:83] Property partition.assignment.strategy is not valid
+[INFO ][20180527 21:05:56,576][Logging$class:68] Property zookeeper.connect is overridden to 192.168.0.71:2181,192.168.0.72:2181,192.168.0.73:2181
+[INFO ][20180527 21:05:57,118][Logging$class:68] [dashujujiagoushi_SuperWang-1527426357113-659e1c14], Connecting to zookeeper instance at 192.168.0.71:2181,192.168.0.72:2181,192.168.0.73:2181
+[INFO ][20180527 21:05:57,128][ZkEventThread:64] Starting ZkClient event thread.
+[INFO ][20180527 21:05:57,146][Environment:100] Client environment:zookeeper.version=3.4.5-1392090, built on 09/30/2012 17:52 GMT
+[INFO ][20180527 21:05:57,146][Environment:100] Client environment:host.name=SuperWang
+[INFO ][20180527 21:05:57,147][Environment:100] Client environment:java.version=1.8.0_111
+[INFO ][20180527 21:05:57,147][Environment:100] Client environment:java.vendor=Oracle Corporation
+[INFO ][20180527 21:05:57,147][Environment:100] Client environment:java.home=D:\OpenSource\jdk1.8.0\jre
+[INFO ][20180527 21:05:57,147][Environment:100] Client environment:java.class.path=E:\WorkSpace\Eclipse4.6\StudyProject\target\classes;E:\WorkSpace\Maven\org\jsoup\jsoup\1.9.1\jsoup-1.9.1.jar;E:\WorkSpace\Maven\net\sourceforge\htmlunit\htmlunit\2.18\htmlunit-2.18.jar;E:\WorkSpace\Maven\xalan\xalan\2.7.1\xalan-2.7.1.jar;E:\WorkSpace\Maven\xalan\serializer\2.7.1\serializer-2.7.1.jar;E:\WorkSpace\Maven\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar;E:\WorkSpace\Maven\commons-collections\commons-collections\3.2\commons-collections-3.2.jar;E:\WorkSpace\Maven\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar;E:\WorkSpace\Maven\org\apache\httpcomponents\httpclient\4.5\httpclient-4.5.jar;E:\WorkSpace\Maven\org\apache\httpcomponents\httpcore\4.4\httpcore-4.4.jar;E:\WorkSpace\Maven\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar;E:\WorkSpace\Maven\commons-codec\commons-codec\1.8\commons-codec-1.8.jar;E:\WorkSpace\Maven\org\apache\httpcomponents\httpmime\4.5\httpmime-4.5.jar;E:\WorkSpace\Maven\net\sourceforge\htmlunit\htmlunit-core-js\2.17\htmlunit-core-js-2.17.jar;E:\WorkSpace\Maven\xerces\xercesImpl\2.11.0\xercesImpl-2.11.0.jar;E:\WorkSpace\Maven\net\sourceforge\nekohtml\nekohtml\1.9.22\nekohtml-1.9.22.jar;E:\WorkSpace\Maven\net\sourceforge\cssparser\cssparser\0.9.16\cssparser-0.9.16.jar;E:\WorkSpace\Maven\org\w3c\css\sac\1.3\sac-1.3.jar;E:\WorkSpace\Maven\commons-io\commons-io\2.0.1\commons-io-2.0.1.jar;E:\WorkSpace\Maven\org\eclipse\jetty\websocket\websocket-client\9.2.12.v20150709\websocket-client-9.2.12.v20150709.jar;E:\WorkSpace\Maven\org\eclipse\jetty\jetty-util\9.2.12.v20150709\jetty-util-9.2.12.v20150709.jar;E:\WorkSpace\Maven\org\eclipse\jetty\jetty-io\9.2.12.v20150709\jetty-io-9.2.12.v20150709.jar;E:\WorkSpace\Maven\org\eclipse\jetty\websocket\websocket-common\9.2.12.v20150709\websocket-common-9.2.12.v20150709.jar;E:\WorkSpace\Maven\org\eclipse\jetty\websocket\websocket-api\9.2.12.v20150709\websocket-api-9.2.12.v20150709.jar;E:\WorkSpace\Maven\antlr\antlr\2.7.6\antlr-2.7.6.jar;E:\WorkSpace\Maven\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;E:\WorkSpace\Maven\org\aspectj\aspectjweaver\1.7.3\aspectjweaver-1.7.3.jar;E:\WorkSpace\Maven\cglib\cglib\2.2.2\cglib-2.2.2.jar;E:\WorkSpace\Maven\asm\asm\3.3.1\asm-3.3.1.jar;E:\WorkSpace\Maven\net\sf\json-lib\json-lib\2.3\json-lib-2.3-jdk15.jar;E:\WorkSpace\Maven\commons-beanutils\commons-beanutils\1.8.0\commons-beanutils-1.8.0.jar;E:\WorkSpace\Maven\commons-lang\commons-lang\2.4\commons-lang-2.4.jar;E:\WorkSpace\Maven\net\sf\ezmorph\ezmorph\1.0.6\ezmorph-1.0.6.jar;E:\WorkSpace\Maven\org\codehaus\jackson\jackson-core-asl\1.9.13\jackson-core-asl-1.9.13.jar;E:\WorkSpace\Maven\org\codehaus\jackson\jackson-mapper-asl\1.9.13\jackson-mapper-asl-1.9.13.jar;E:\WorkSpace\Maven\ognl\ognl\3.0.6\ognl-3.0.6.jar;E:\WorkSpace\Maven\javassist\javassist\3.12.1.GA\javassist-3.12.1.GA.jar;E:\WorkSpace\Maven\oro\oro\2.0.8\oro-2.0.8.jar;E:\WorkSpace\Maven\commons-net\commons-net\3.2\commons-net-3.2.jar;E:\WorkSpace\Maven\commons-digester\commons-digester\2.0\commons-digester-2.0.jar;E:\WorkSpace\Maven\commons-fileupload\commons-fileupload\1.3.1\commons-fileupload-1.3.1.jar;E:\WorkSpace\Maven\commons-validator\commons-validator\1.1.4\commons-validator-1.1.4.jar;E:\WorkSpace\Maven\commons-cli\commons-cli\1.2\commons-cli-1.2.jar;E:\WorkSpace\Maven\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;E:\WorkSpace\Maven\jstl\jstl\1.2\jstl-1.2.jar;E:\WorkSpace\Maven\javax\transaction\jta\1.1\jta-1.1.jar;E:\WorkSpace\Maven\log4j\log4j\1.2.17\log4j-1.2.17.jar;E:\WorkSpace\Maven\org\slf4j\slf4j-api\1.7.5\slf4j-api-1.7.5.jar;E:\WorkSpace\Maven\org\slf4j\slf4j-log4j12\1.7.5\slf4j-log4j12-1.7.5.jar;E:\WorkSpace\Maven\net\sourceforge\jexcelapi\jxl\2.6.12\jxl-2.6.12.jar;E:\WorkSpace\Maven\org\jdom\jdom\1.1.3\jdom-1.1.3.jar;E:\WorkSpace\Maven\jaxen\jaxen\1.1.1\jaxen-1.1.1.jar;E:\WorkSpace\Maven\jdom\jdom\1.0\jdom-1.0.jar;E:\WorkSpace\Maven\xom\xom\1.0\xom-1.0.jar;E:\WorkSpace\Maven\xerces\xmlParserAPIs\2.6.2\xmlParserAPIs-2.6.2.jar;E:\WorkSpace\Maven\com\ibm\icu\icu4j\2.6.1\icu4j-2.6.1.jar;E:\WorkSpace\Maven\redis\clients\jedis\2.9.0\jedis-2.9.0.jar;E:\WorkSpace\Maven\org\apache\commons\commons-pool2\2.4.2\commons-pool2-2.4.2.jar;E:\WorkSpace\Maven\org\apache\ant\ant\1.10.1\ant-1.10.1.jar;E:\WorkSpace\Maven\org\apache\ant\ant-launcher\1.10.1\ant-launcher-1.10.1.jar;E:\WorkSpace\Maven\org\apache\zookeeper\zookeeper\3.4.5\zookeeper-3.4.5.jar;E:\WorkSpace\Maven\jline\jline\0.9.94\jline-0.9.94.jar;E:\WorkSpace\Maven\org\jboss\netty\netty\3.2.5.Final\netty-3.2.5.Final.jar;E:\WorkSpace\Maven\com\101tec\zkclient\0.3\zkclient-0.3.jar;E:\WorkSpace\Maven\org\springframework\spring-aop\4.2.9.RELEASE\spring-aop-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-beans\4.2.9.RELEASE\spring-beans-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-core\4.2.9.RELEASE\spring-core-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-aspects\4.2.9.RELEASE\spring-aspects-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-context\4.2.9.RELEASE\spring-context-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-expression\4.2.9.RELEASE\spring-expression-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-context-support\4.2.9.RELEASE\spring-context-support-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-instrument\4.2.9.RELEASE\spring-instrument-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-instrument-tomcat\4.2.9.RELEASE\spring-instrument-tomcat-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-jdbc\4.2.9.RELEASE\spring-jdbc-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-tx\4.2.9.RELEASE\spring-tx-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-jms\4.2.9.RELEASE\spring-jms-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-messaging\4.2.9.RELEASE\spring-messaging-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-orm\4.2.9.RELEASE\spring-orm-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-oxm\4.2.9.RELEASE\spring-oxm-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-web\4.2.9.RELEASE\spring-web-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-webmvc\4.2.9.RELEASE\spring-webmvc-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-webmvc-portlet\4.2.9.RELEASE\spring-webmvc-portlet-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\amqp\spring-rabbit\1.7.5.RELEASE\spring-rabbit-1.7.5.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\retry\spring-retry\1.2.1.RELEASE\spring-retry-1.2.1.RELEASE.jar;E:\WorkSpace\Maven\com\rabbitmq\http-client\1.1.1.RELEASE\http-client-1.1.1.RELEASE.jar;E:\WorkSpace\Maven\com\fasterxml\jackson\core\jackson-databind\2.8.4\jackson-databind-2.8.4.jar;E:\WorkSpace\Maven\com\fasterxml\jackson\core\jackson-annotations\2.8.0\jackson-annotations-2.8.0.jar;E:\WorkSpace\Maven\com\fasterxml\jackson\core\jackson-core\2.8.4\jackson-core-2.8.4.jar;E:\WorkSpace\Maven\org\springframework\amqp\spring-amqp\1.7.5.RELEASE\spring-amqp-1.7.5.RELEASE.jar;E:\WorkSpace\Maven\com\rabbitmq\amqp-client\4.2.0\amqp-client-4.2.0.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-common\2.6.5\hadoop-common-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-annotations\2.6.5\hadoop-annotations-2.6.5.jar;D:\OpenSource\jdk1.8.0\lib\tools.jar;E:\WorkSpace\Maven\com\google\guava\guava\11.0.2\guava-11.0.2.jar;E:\WorkSpace\Maven\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;E:\WorkSpace\Maven\org\apache\commons\commons-math3\3.1.1\commons-math3-3.1.1.jar;E:\WorkSpace\Maven\xmlenc\xmlenc\0.52\xmlenc-0.52.jar;E:\WorkSpace\Maven\commons-httpclient\commons-httpclient\3.1\commons-httpclient-3.1.jar;E:\WorkSpace\Maven\javax\servlet\servlet-api\2.5\servlet-api-2.5.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jetty\6.1.26\jetty-6.1.26.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jetty-util\6.1.26\jetty-util-6.1.26.jar;E:\WorkSpace\Maven\com\sun\jersey\jersey-core\1.9\jersey-core-1.9.jar;E:\WorkSpace\Maven\com\sun\jersey\jersey-json\1.9\jersey-json-1.9.jar;E:\WorkSpace\Maven\org\codehaus\jettison\jettison\1.1\jettison-1.1.jar;E:\WorkSpace\Maven\com\sun\xml\bind\jaxb-impl\2.2.3-1\jaxb-impl-2.2.3-1.jar;E:\WorkSpace\Maven\javax\xml\bind\jaxb-api\2.2.2\jaxb-api-2.2.2.jar;E:\WorkSpace\Maven\javax\xml\stream\stax-api\1.0-2\stax-api-1.0-2.jar;E:\WorkSpace\Maven\javax\activation\activation\1.1\activation-1.1.jar;E:\WorkSpace\Maven\org\codehaus\jackson\jackson-jaxrs\1.8.8\jackson-jaxrs-1.8.8.jar;E:\WorkSpace\Maven\org\codehaus\jackson\jackson-xc\1.8.3\jackson-xc-1.8.3.jar;E:\WorkSpace\Maven\com\sun\jersey\jersey-server\1.9\jersey-server-1.9.jar;E:\WorkSpace\Maven\tomcat\jasper-compiler\5.5.23\jasper-compiler-5.5.23.jar;E:\WorkSpace\Maven\tomcat\jasper-runtime\5.5.23\jasper-runtime-5.5.23.jar;E:\WorkSpace\Maven\commons-el\commons-el\1.0\commons-el-1.0.jar;E:\WorkSpace\Maven\javax\servlet\jsp\jsp-api\2.1\jsp-api-2.1.jar;E:\WorkSpace\Maven\net\java\dev\jets3t\jets3t\0.9.0\jets3t-0.9.0.jar;E:\WorkSpace\Maven\com\jamesmurty\utils\java-xmlbuilder\0.4\java-xmlbuilder-0.4.jar;E:\WorkSpace\Maven\commons-configuration\commons-configuration\1.6\commons-configuration-1.6.jar;E:\WorkSpace\Maven\commons-beanutils\commons-beanutils-core\1.8.0\commons-beanutils-core-1.8.0.jar;E:\WorkSpace\Maven\org\apache\avro\avro\1.7.4\avro-1.7.4.jar;E:\WorkSpace\Maven\com\thoughtworks\paranamer\paranamer\2.3\paranamer-2.3.jar;E:\WorkSpace\Maven\org\xerial\snappy\snappy-java\1.0.5\snappy-java-1.0.5.jar;E:\WorkSpace\Maven\org\apache\commons\commons-compress\1.4.1\commons-compress-1.4.1.jar;E:\WorkSpace\Maven\org\tukaani\xz\1.0\xz-1.0.jar;E:\WorkSpace\Maven\com\google\protobuf\protobuf-java\2.5.0\protobuf-java-2.5.0.jar;E:\WorkSpace\Maven\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-auth\2.6.5\hadoop-auth-2.6.5.jar;E:\WorkSpace\Maven\org\apache\directory\server\apacheds-kerberos-codec\2.0.0-M15\apacheds-kerberos-codec-2.0.0-M15.jar;E:\WorkSpace\Maven\org\apache\directory\server\apacheds-i18n\2.0.0-M15\apacheds-i18n-2.0.0-M15.jar;E:\WorkSpace\Maven\org\apache\directory\api\api-asn1-api\1.0.0-M20\api-asn1-api-1.0.0-M20.jar;E:\WorkSpace\Maven\org\apache\directory\api\api-util\1.0.0-M20\api-util-1.0.0-M20.jar;E:\WorkSpace\Maven\org\apache\curator\curator-framework\2.6.0\curator-framework-2.6.0.jar;E:\WorkSpace\Maven\org\apache\curator\curator-client\2.6.0\curator-client-2.6.0.jar;E:\WorkSpace\Maven\com\jcraft\jsch\0.1.42\jsch-0.1.42.jar;E:\WorkSpace\Maven\org\apache\curator\curator-recipes\2.6.0\curator-recipes-2.6.0.jar;E:\WorkSpace\Maven\org\htrace\htrace-core\3.0.4\htrace-core-3.0.4.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-client\2.6.5\hadoop-client-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-hdfs\2.6.5\hadoop-hdfs-2.6.5.jar;E:\WorkSpace\Maven\io\netty\netty\3.6.2.Final\netty-3.6.2.Final.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-app\2.6.5\hadoop-mapreduce-client-app-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-common\2.6.5\hadoop-mapreduce-client-common-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-common\2.6.5\hadoop-yarn-common-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-api\2.6.5\hadoop-yarn-api-2.6.5.jar;E:\WorkSpace\Maven\com\sun\jersey\jersey-client\1.9\jersey-client-1.9.jar;E:\WorkSpace\Maven\com\google\inject\guice\3.0\guice-3.0.jar;E:\WorkSpace\Maven\javax\inject\javax.inject\1\javax.inject-1.jar;E:\WorkSpace\Maven\com\sun\jersey\contribs\jersey-guice\1.9\jersey-guice-1.9.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-client\2.6.5\hadoop-yarn-client-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-core\2.6.5\hadoop-mapreduce-client-core-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-server-common\2.6.5\hadoop-yarn-server-common-2.6.5.jar;E:\WorkSpace\Maven\org\fusesource\leveldbjni\leveldbjni-all\1.8\leveldbjni-all-1.8.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-shuffle\2.6.5\hadoop-mapreduce-client-shuffle-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-jobclient\2.6.5\hadoop-mapreduce-client-jobclient-2.6.5.jar;E:\WorkSpace\Maven\commons-daemon\commons-daemon\1.0.13\commons-daemon-1.0.13.jar;E:\WorkSpace\Maven\org\apache\hive\hive-exec\1.2.1\hive-exec-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-ant\1.2.1\hive-ant-1.2.1.jar;E:\WorkSpace\Maven\org\apache\velocity\velocity\1.5\velocity-1.5.jar;E:\WorkSpace\Maven\org\apache\hive\hive-metastore\1.2.1\hive-metastore-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-serde\1.2.1\hive-serde-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-common\1.2.1\hive-common-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-shims\1.2.1\hive-shims-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\shims\hive-shims-common\1.2.1\hive-shims-common-1.2.1.jar;E:\WorkSpace\Maven\log4j\apache-log4j-extras\1.2.17\apache-log4j-extras-1.2.17.jar;E:\WorkSpace\Maven\org\apache\thrift\libthrift\0.9.2\libthrift-0.9.2.jar;E:\WorkSpace\Maven\org\apache\hive\shims\hive-shims-0.20S\1.2.1\hive-shims-0.20S-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\shims\hive-shims-0.23\1.2.1\hive-shims-0.23-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-server-resourcemanager\2.6.0\hadoop-yarn-server-resourcemanager-2.6.0.jar;E:\WorkSpace\Maven\com\google\inject\extensions\guice-servlet\3.0\guice-servlet-3.0.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-server-applicationhistoryservice\2.6.0\hadoop-yarn-server-applicationhistoryservice-2.6.0.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-server-web-proxy\2.6.0\hadoop-yarn-server-web-proxy-2.6.0.jar;E:\WorkSpace\Maven\org\apache\hive\shims\hive-shims-scheduler\1.2.1\hive-shims-scheduler-1.2.1.jar;E:\WorkSpace\Maven\joda-time\joda-time\2.6\joda-time-2.6.jar;E:\WorkSpace\Maven\org\json\json\20090211\json-20090211.jar;E:\WorkSpace\Maven\net\sf\opencsv\opencsv\2.3\opencsv-2.3.jar;E:\WorkSpace\Maven\com\twitter\parquet-hadoop-bundle\1.6.0\parquet-hadoop-bundle-1.6.0.jar;E:\WorkSpace\Maven\com\jolbox\bonecp\0.8.0.RELEASE\bonecp-0.8.0.RELEASE.jar;E:\WorkSpace\Maven\org\apache\derby\derby\10.10.2.0\derby-10.10.2.0.jar;E:\WorkSpace\Maven\org\datanucleus\datanucleus-api-jdo\3.2.6\datanucleus-api-jdo-3.2.6.jar;E:\WorkSpace\Maven\org\datanucleus\datanucleus-core\3.2.10\datanucleus-core-3.2.10.jar;E:\WorkSpace\Maven\org\datanucleus\datanucleus-rdbms\3.2.9\datanucleus-rdbms-3.2.9.jar;E:\WorkSpace\Maven\commons-pool\commons-pool\1.6\commons-pool-1.6.jar;E:\WorkSpace\Maven\commons-dbcp\commons-dbcp\1.4\commons-dbcp-1.4.jar;E:\WorkSpace\Maven\javax\jdo\jdo-api\3.0.1\jdo-api-3.0.1.jar;E:\WorkSpace\Maven\org\antlr\antlr-runtime\3.4\antlr-runtime-3.4.jar;E:\WorkSpace\Maven\org\antlr\stringtemplate\3.2.1\stringtemplate-3.2.1.jar;E:\WorkSpace\Maven\org\apache\thrift\libfb303\0.9.2\libfb303-0.9.2.jar;E:\WorkSpace\Maven\org\antlr\ST4\4.0.4\ST4-4.0.4.jar;E:\WorkSpace\Maven\org\apache\ivy\ivy\2.4.0\ivy-2.4.0.jar;E:\WorkSpace\Maven\org\codehaus\groovy\groovy-all\2.1.6\groovy-all-2.1.6.jar;E:\WorkSpace\Maven\org\apache\calcite\calcite-core\1.2.0-incubating\calcite-core-1.2.0-incubating.jar;E:\WorkSpace\Maven\org\apache\calcite\calcite-avatica\1.2.0-incubating\calcite-avatica-1.2.0-incubating.jar;E:\WorkSpace\Maven\org\apache\calcite\calcite-linq4j\1.2.0-incubating\calcite-linq4j-1.2.0-incubating.jar;E:\WorkSpace\Maven\net\hydromatic\eigenbase-properties\1.1.5\eigenbase-properties-1.1.5.jar;E:\WorkSpace\Maven\org\codehaus\janino\janino\2.7.6\janino-2.7.6.jar;E:\WorkSpace\Maven\org\codehaus\janino\commons-compiler\2.7.6\commons-compiler-2.7.6.jar;E:\WorkSpace\Maven\org\pentaho\pentaho-aggdesigner-algorithm\5.1.5-jhyde\pentaho-aggdesigner-algorithm-5.1.5-jhyde.jar;E:\WorkSpace\Maven\stax\stax-api\1.0.1\stax-api-1.0.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-jdbc\1.2.1\hive-jdbc-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-service\1.2.1\hive-service-1.2.1.jar;E:\WorkSpace\Maven\net\sf\jpam\jpam\1.1\jpam-1.1.jar;E:\WorkSpace\Maven\org\eclipse\jetty\aggregate\jetty-all\7.6.0.v20120127\jetty-all-7.6.0.v20120127.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-jta_1.1_spec\1.1.1\geronimo-jta_1.1_spec-1.1.1.jar;E:\WorkSpace\Maven\javax\mail\mail\1.4.7\mail-1.4.7.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-jaspic_1.0_spec\1.0\geronimo-jaspic_1.0_spec-1.0.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-annotation_1.0_spec\1.1.1\geronimo-annotation_1.0_spec-1.1.1.jar;E:\WorkSpace\Maven\asm\asm-commons\3.1\asm-commons-3.1.jar;E:\WorkSpace\Maven\asm\asm-tree\3.1\asm-tree-3.1.jar;E:\WorkSpace\Maven\com\github\stephenc\findbugs\findbugs-annotations\1.3.9-1\findbugs-annotations-1.3.9-1.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-client\0.99.2\hbase-client-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-annotations\0.99.2\hbase-annotations-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-common\0.99.2\hbase-common-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-protocol\0.99.2\hbase-protocol-0.99.2.jar;E:\WorkSpace\Maven\io\netty\netty-all\4.0.24.Final\netty-all-4.0.24.Final.jar;E:\WorkSpace\Maven\org\jruby\joni\joni\2.1.2\joni-2.1.2.jar;E:\WorkSpace\Maven\org\jruby\jcodings\jcodings\1.0.8\jcodings-1.0.8.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-server\0.99.2\hbase-server-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-prefix-tree\0.99.2\hbase-prefix-tree-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-common\0.99.2\hbase-common-0.99.2-tests.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-hadoop-compat\0.99.2\hbase-hadoop-compat-0.99.2.jar;E:\WorkSpace\Maven\org\apache\commons\commons-math\2.2\commons-math-2.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-hadoop2-compat\0.99.2\hbase-hadoop2-compat-0.99.2.jar;E:\WorkSpace\Maven\com\yammer\metrics\metrics-core\2.2.0\metrics-core-2.2.0.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jetty-sslengine\6.1.26\jetty-sslengine-6.1.26.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jsp-2.1\6.1.14\jsp-2.1-6.1.14.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jsp-api-2.1\6.1.14\jsp-api-2.1-6.1.14.jar;E:\WorkSpace\Maven\org\mortbay\jetty\servlet-api-2.5\6.1.14\servlet-api-2.5-6.1.14.jar;E:\WorkSpace\Maven\org\jamon\jamon-runtime\2.3.1\jamon-runtime-2.3.1.jar;E:\WorkSpace\Maven\com\lmax\disruptor\3.3.0\disruptor-3.3.0.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-core\4.10.3\lucene-core-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-queryparser\4.10.3\lucene-queryparser-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-queries\4.10.3\lucene-queries-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-sandbox\4.10.3\lucene-sandbox-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-analyzers-common\4.10.3\lucene-analyzers-common-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-analyzers-smartcn\4.10.3\lucene-analyzers-smartcn-4.10.3.jar;E:\WorkSpace\Maven\com\janeluo\ikanalyzer\2012_u6\ikanalyzer-2012_u6.jar;E:\WorkSpace\Maven\org\apache\solr\solr-solrj\4.10.3\solr-solrj-4.10.3.jar;E:\WorkSpace\Maven\org\codehaus\woodstox\wstx-asl\3.2.7\wstx-asl-3.2.7.jar;E:\WorkSpace\Maven\org\noggit\noggit\0.5\noggit-0.5.jar;E:\WorkSpace\Maven\org\mybatis\mybatis\3.2.8\mybatis-3.2.8.jar;E:\WorkSpace\Maven\org\mybatis\mybatis-spring\1.2.2\mybatis-spring-1.2.2.jar;E:\WorkSpace\Maven\mysql\mysql-connector-java\5.1.32\mysql-connector-java-5.1.32.jar;E:\WorkSpace\Maven\org\apache\kafka\kafka_2.9.2\0.8.1\kafka_2.9.2-0.8.1.jar;E:\WorkSpace\Maven\org\scala-lang\scala-library\2.9.2\scala-library-2.9.2.jar;E:\WorkSpace\Maven\com\yammer\metrics\metrics-annotation\2.2.0\metrics-annotation-2.2.0.jar;E:\WorkSpace\Maven\net\sf\jopt-simple\jopt-simple\3.2\jopt-simple-3.2.jar;E:\WorkSpace\Maven\org\mongodb\mongo-java-driver\3.4.2\mongo-java-driver-3.4.2.jar;E:\WorkSpace\Maven\org\hibernate\hibernate-core\5.1.2.Final\hibernate-core-5.1.2.Final.jar;E:\WorkSpace\Maven\org\jboss\logging\jboss-logging\3.3.0.Final\jboss-logging-3.3.0.Final.jar;E:\WorkSpace\Maven\org\hibernate\javax\persistence\hibernate-jpa-2.1-api\1.0.0.Final\hibernate-jpa-2.1-api-1.0.0.Final.jar;E:\WorkSpace\Maven\org\javassist\javassist\3.20.0-GA\javassist-3.20.0-GA.jar;E:\WorkSpace\Maven\org\jboss\jandex\2.0.0.Final\jandex-2.0.0.Final.jar;E:\WorkSpace\Maven\com\fasterxml\classmate\1.3.0\classmate-1.3.0.jar;E:\WorkSpace\Maven\org\hibernate\common\hibernate-commons-annotations\5.0.1.Final\hibernate-commons-annotations-5.0.1.Final.jar;E:\WorkSpace\Maven\org\activiti\activiti-engine\5.22.0\activiti-engine-5.22.0.jar;E:\WorkSpace\Maven\org\activiti\activiti-bpmn-converter\5.22.0\activiti-bpmn-converter-5.22.0.jar;E:\WorkSpace\Maven\org\activiti\activiti-bpmn-model\5.22.0\activiti-bpmn-model-5.22.0.jar;E:\WorkSpace\Maven\org\slf4j\jcl-over-slf4j\1.7.6\jcl-over-slf4j-1.7.6.jar;E:\WorkSpace\Maven\org\activiti\activiti-process-validation\5.22.0\activiti-process-validation-5.22.0.jar;E:\WorkSpace\Maven\org\activiti\activiti-image-generator\5.22.0\activiti-image-generator-5.22.0.jar;E:\WorkSpace\Maven\org\apache\commons\commons-email\1.4\commons-email-1.4.jar;E:\WorkSpace\Maven\com\sun\mail\javax.mail\1.5.2\javax.mail-1.5.2.jar;E:\WorkSpace\Maven\org\apache\tomcat\jsp-api\6.0.37\jsp-api-6.0.37.jar;E:\WorkSpace\Maven\org\apache\tomcat\el-api\6.0.37\el-api-6.0.37.jar;E:\WorkSpace\Maven\org\apache\tomcat\servlet-api\6.0.37\servlet-api-6.0.37.jar;E:\WorkSpace\Maven\org\freemarker\freemarker\2.3.19\freemarker-2.3.19.jar;E:\WorkSpace\Maven\com\alibaba\druid\1.0.12\druid-1.0.12.jar;D:\OpenSource\jdk1.8.0\lib\jconsole.jar;E:\WorkSpace\Maven\com\alibaba\fastjson\1.1.41\fastjson-1.1.41.jar;E:\WorkSpace\Maven\org\apache\activemq\activemq-all\5.11.1\activemq-all-5.11.1.jar;E:\WorkSpace\Maven\org\apache\activemq\activemq-pool\5.11.1\activemq-pool-5.11.1.jar;E:\WorkSpace\Maven\org\apache\activemq\activemq-jms-pool\5.11.1\activemq-jms-pool-5.11.1.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-jms_1.1_spec\1.1.1\geronimo-jms_1.1_spec-1.1.1.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-jta_1.0.1B_spec\1.0.1\geronimo-jta_1.0.1B_spec-1.0.1.jar;E:\WorkSpace\Maven\org\apache\activemq\activemq-client\5.11.1\activemq-client-5.11.1.jar;E:\WorkSpace\Maven\org\fusesource\hawtbuf\hawtbuf\1.11\hawtbuf-1.11.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-j2ee-management_1.1_spec\1.0.1\geronimo-j2ee-management_1.1_spec-1.0.1.jar;E:\WorkSpace\Maven\org\mozilla\rhino\1.7R4\rhino-1.7R4.jar;E:\WorkSpace\Maven\com\yahoo\platform\yui\yuicompressor\2.4.8\yuicompressor-2.4.8.jar;E:\WorkSpace\Maven\rhino\js\1.7R2\js-1.7R2.jar;E:\WorkSpace\Maven\net\sf\ehcache\ehcache\2.10.4\ehcache-2.10.4.jar
+[INFO ][20180527 21:05:57,149][Environment:100] Client environment:java.library.path=D:\OpenSource\jdk1.8.0\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:/OpenSource/jdk1.8.0/jre/bin/server;D:/OpenSource/jdk1.8.0/jre/bin;D:/OpenSource/jdk1.8.0/jre/lib/amd64;D:\SoftWare\nSC\python;D:\SoftWare\nSC\bin;D:\app\SuperWang\product\11.2.0\dbhome_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\OpenSource\Subversion\bin;D:\SoftWare\StorageExecutive;D:\OpenSource\hadoop-2.6.5\bin;D:\OpenSource\TortoiesSVN\bin;C:\Users\SuperWang\.app\;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;%JAVA_HOME%\bin;%MYSQL_HOME%\bin;%SVN_HOME%\bin;%MAVEN_HOME%\bin;%FFMEG_HOME%\bin;;D:\OpenSource\eclipse4.6;;.
+[INFO ][20180527 21:05:57,149][Environment:100] Client environment:java.io.tmpdir=E:\SUPERW~1\Temp\
+[INFO ][20180527 21:05:57,151][Environment:100] Client environment:java.compiler=<NA>
+[INFO ][20180527 21:05:57,151][Environment:100] Client environment:os.name=Windows 10
+[INFO ][20180527 21:05:57,152][Environment:100] Client environment:os.arch=amd64
+[INFO ][20180527 21:05:57,152][Environment:100] Client environment:os.version=10.0
+[INFO ][20180527 21:05:57,152][Environment:100] Client environment:user.name=SuperWang
+[INFO ][20180527 21:05:57,152][Environment:100] Client environment:user.home=C:\Users\SuperWang
+[INFO ][20180527 21:05:57,152][Environment:100] Client environment:user.dir=E:\WorkSpace\Eclipse4.6\StudyProject
+[INFO ][20180527 21:05:57,153][ZooKeeper:438] Initiating client connection, connectString=192.168.0.71:2181,192.168.0.72:2181,192.168.0.73:2181 sessionTimeout=6000 watcher=org.I0Itec.zkclient.ZkClient@4fe767f3
+[INFO ][20180527 21:06:03,235][ZkEventThread:82] Terminate ZkClient event thread.
+[INFO ][20180527 21:06:06,242][ClientCnxn$SendThread:966] Opening socket connection to server 192.168.0.73/192.168.0.73:2181. Will not attempt to authenticate using SASL (unknown error)
+[INFO ][20180527 21:06:06,348][ZooKeeper:684] Session: 0x0 closed
+[INFO ][20180527 21:06:06,348][ClientCnxn$EventThread:509] EventThread shut down
+[INFO ][20180527 21:09:48,884][Logging$class:68] Verifying properties
+[INFO ][20180527 21:09:48,929][Logging$class:68] Property auto.commit.interval.ms is overridden to 1000
+[INFO ][20180527 21:09:48,932][Logging$class:68] Property auto.offset.reset is overridden to largest
+[INFO ][20180527 21:09:48,932][Logging$class:68] Property group.id is overridden to dashujujiagoushi
+[WARN ][20180527 21:09:48,933][Logging$class:83] Property partition.assignment.strategy is not valid
+[INFO ][20180527 21:09:48,933][Logging$class:68] Property zookeeper.connect is overridden to 192.168.0.71:2181,192.168.0.72:2181,192.168.0.73:2181
+[INFO ][20180527 21:09:49,453][Logging$class:68] [dashujujiagoushi_SuperWang-1527426589447-7864fd00], Connecting to zookeeper instance at 192.168.0.71:2181,192.168.0.72:2181,192.168.0.73:2181
+[INFO ][20180527 21:09:49,463][ZkEventThread:64] Starting ZkClient event thread.
+[INFO ][20180527 21:09:49,481][Environment:100] Client environment:zookeeper.version=3.4.5-1392090, built on 09/30/2012 17:52 GMT
+[INFO ][20180527 21:09:49,482][Environment:100] Client environment:host.name=SuperWang
+[INFO ][20180527 21:09:49,482][Environment:100] Client environment:java.version=1.8.0_111
+[INFO ][20180527 21:09:49,482][Environment:100] Client environment:java.vendor=Oracle Corporation
+[INFO ][20180527 21:09:49,482][Environment:100] Client environment:java.home=D:\OpenSource\jdk1.8.0\jre
+[INFO ][20180527 21:09:49,483][Environment:100] Client environment:java.class.path=E:\WorkSpace\Eclipse4.6\StudyProject\target\classes;E:\WorkSpace\Maven\org\jsoup\jsoup\1.9.1\jsoup-1.9.1.jar;E:\WorkSpace\Maven\net\sourceforge\htmlunit\htmlunit\2.18\htmlunit-2.18.jar;E:\WorkSpace\Maven\xalan\xalan\2.7.1\xalan-2.7.1.jar;E:\WorkSpace\Maven\xalan\serializer\2.7.1\serializer-2.7.1.jar;E:\WorkSpace\Maven\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar;E:\WorkSpace\Maven\commons-collections\commons-collections\3.2\commons-collections-3.2.jar;E:\WorkSpace\Maven\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar;E:\WorkSpace\Maven\org\apache\httpcomponents\httpclient\4.5\httpclient-4.5.jar;E:\WorkSpace\Maven\org\apache\httpcomponents\httpcore\4.4\httpcore-4.4.jar;E:\WorkSpace\Maven\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar;E:\WorkSpace\Maven\commons-codec\commons-codec\1.8\commons-codec-1.8.jar;E:\WorkSpace\Maven\org\apache\httpcomponents\httpmime\4.5\httpmime-4.5.jar;E:\WorkSpace\Maven\net\sourceforge\htmlunit\htmlunit-core-js\2.17\htmlunit-core-js-2.17.jar;E:\WorkSpace\Maven\xerces\xercesImpl\2.11.0\xercesImpl-2.11.0.jar;E:\WorkSpace\Maven\net\sourceforge\nekohtml\nekohtml\1.9.22\nekohtml-1.9.22.jar;E:\WorkSpace\Maven\net\sourceforge\cssparser\cssparser\0.9.16\cssparser-0.9.16.jar;E:\WorkSpace\Maven\org\w3c\css\sac\1.3\sac-1.3.jar;E:\WorkSpace\Maven\commons-io\commons-io\2.0.1\commons-io-2.0.1.jar;E:\WorkSpace\Maven\org\eclipse\jetty\websocket\websocket-client\9.2.12.v20150709\websocket-client-9.2.12.v20150709.jar;E:\WorkSpace\Maven\org\eclipse\jetty\jetty-util\9.2.12.v20150709\jetty-util-9.2.12.v20150709.jar;E:\WorkSpace\Maven\org\eclipse\jetty\jetty-io\9.2.12.v20150709\jetty-io-9.2.12.v20150709.jar;E:\WorkSpace\Maven\org\eclipse\jetty\websocket\websocket-common\9.2.12.v20150709\websocket-common-9.2.12.v20150709.jar;E:\WorkSpace\Maven\org\eclipse\jetty\websocket\websocket-api\9.2.12.v20150709\websocket-api-9.2.12.v20150709.jar;E:\WorkSpace\Maven\antlr\antlr\2.7.6\antlr-2.7.6.jar;E:\WorkSpace\Maven\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;E:\WorkSpace\Maven\org\aspectj\aspectjweaver\1.7.3\aspectjweaver-1.7.3.jar;E:\WorkSpace\Maven\cglib\cglib\2.2.2\cglib-2.2.2.jar;E:\WorkSpace\Maven\asm\asm\3.3.1\asm-3.3.1.jar;E:\WorkSpace\Maven\net\sf\json-lib\json-lib\2.3\json-lib-2.3-jdk15.jar;E:\WorkSpace\Maven\commons-beanutils\commons-beanutils\1.8.0\commons-beanutils-1.8.0.jar;E:\WorkSpace\Maven\commons-lang\commons-lang\2.4\commons-lang-2.4.jar;E:\WorkSpace\Maven\net\sf\ezmorph\ezmorph\1.0.6\ezmorph-1.0.6.jar;E:\WorkSpace\Maven\org\codehaus\jackson\jackson-core-asl\1.9.13\jackson-core-asl-1.9.13.jar;E:\WorkSpace\Maven\org\codehaus\jackson\jackson-mapper-asl\1.9.13\jackson-mapper-asl-1.9.13.jar;E:\WorkSpace\Maven\ognl\ognl\3.0.6\ognl-3.0.6.jar;E:\WorkSpace\Maven\javassist\javassist\3.12.1.GA\javassist-3.12.1.GA.jar;E:\WorkSpace\Maven\oro\oro\2.0.8\oro-2.0.8.jar;E:\WorkSpace\Maven\commons-net\commons-net\3.2\commons-net-3.2.jar;E:\WorkSpace\Maven\commons-digester\commons-digester\2.0\commons-digester-2.0.jar;E:\WorkSpace\Maven\commons-fileupload\commons-fileupload\1.3.1\commons-fileupload-1.3.1.jar;E:\WorkSpace\Maven\commons-validator\commons-validator\1.1.4\commons-validator-1.1.4.jar;E:\WorkSpace\Maven\commons-cli\commons-cli\1.2\commons-cli-1.2.jar;E:\WorkSpace\Maven\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;E:\WorkSpace\Maven\jstl\jstl\1.2\jstl-1.2.jar;E:\WorkSpace\Maven\javax\transaction\jta\1.1\jta-1.1.jar;E:\WorkSpace\Maven\log4j\log4j\1.2.17\log4j-1.2.17.jar;E:\WorkSpace\Maven\org\slf4j\slf4j-api\1.7.5\slf4j-api-1.7.5.jar;E:\WorkSpace\Maven\org\slf4j\slf4j-log4j12\1.7.5\slf4j-log4j12-1.7.5.jar;E:\WorkSpace\Maven\net\sourceforge\jexcelapi\jxl\2.6.12\jxl-2.6.12.jar;E:\WorkSpace\Maven\org\jdom\jdom\1.1.3\jdom-1.1.3.jar;E:\WorkSpace\Maven\jaxen\jaxen\1.1.1\jaxen-1.1.1.jar;E:\WorkSpace\Maven\jdom\jdom\1.0\jdom-1.0.jar;E:\WorkSpace\Maven\xom\xom\1.0\xom-1.0.jar;E:\WorkSpace\Maven\xerces\xmlParserAPIs\2.6.2\xmlParserAPIs-2.6.2.jar;E:\WorkSpace\Maven\com\ibm\icu\icu4j\2.6.1\icu4j-2.6.1.jar;E:\WorkSpace\Maven\redis\clients\jedis\2.9.0\jedis-2.9.0.jar;E:\WorkSpace\Maven\org\apache\commons\commons-pool2\2.4.2\commons-pool2-2.4.2.jar;E:\WorkSpace\Maven\org\apache\ant\ant\1.10.1\ant-1.10.1.jar;E:\WorkSpace\Maven\org\apache\ant\ant-launcher\1.10.1\ant-launcher-1.10.1.jar;E:\WorkSpace\Maven\org\apache\zookeeper\zookeeper\3.4.5\zookeeper-3.4.5.jar;E:\WorkSpace\Maven\jline\jline\0.9.94\jline-0.9.94.jar;E:\WorkSpace\Maven\org\jboss\netty\netty\3.2.5.Final\netty-3.2.5.Final.jar;E:\WorkSpace\Maven\com\101tec\zkclient\0.3\zkclient-0.3.jar;E:\WorkSpace\Maven\org\springframework\spring-aop\4.2.9.RELEASE\spring-aop-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-beans\4.2.9.RELEASE\spring-beans-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-core\4.2.9.RELEASE\spring-core-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-aspects\4.2.9.RELEASE\spring-aspects-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-context\4.2.9.RELEASE\spring-context-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-expression\4.2.9.RELEASE\spring-expression-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-context-support\4.2.9.RELEASE\spring-context-support-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-instrument\4.2.9.RELEASE\spring-instrument-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-instrument-tomcat\4.2.9.RELEASE\spring-instrument-tomcat-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-jdbc\4.2.9.RELEASE\spring-jdbc-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-tx\4.2.9.RELEASE\spring-tx-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-jms\4.2.9.RELEASE\spring-jms-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-messaging\4.2.9.RELEASE\spring-messaging-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-orm\4.2.9.RELEASE\spring-orm-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-oxm\4.2.9.RELEASE\spring-oxm-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-web\4.2.9.RELEASE\spring-web-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-webmvc\4.2.9.RELEASE\spring-webmvc-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-webmvc-portlet\4.2.9.RELEASE\spring-webmvc-portlet-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\amqp\spring-rabbit\1.7.5.RELEASE\spring-rabbit-1.7.5.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\retry\spring-retry\1.2.1.RELEASE\spring-retry-1.2.1.RELEASE.jar;E:\WorkSpace\Maven\com\rabbitmq\http-client\1.1.1.RELEASE\http-client-1.1.1.RELEASE.jar;E:\WorkSpace\Maven\com\fasterxml\jackson\core\jackson-databind\2.8.4\jackson-databind-2.8.4.jar;E:\WorkSpace\Maven\com\fasterxml\jackson\core\jackson-annotations\2.8.0\jackson-annotations-2.8.0.jar;E:\WorkSpace\Maven\com\fasterxml\jackson\core\jackson-core\2.8.4\jackson-core-2.8.4.jar;E:\WorkSpace\Maven\org\springframework\amqp\spring-amqp\1.7.5.RELEASE\spring-amqp-1.7.5.RELEASE.jar;E:\WorkSpace\Maven\com\rabbitmq\amqp-client\4.2.0\amqp-client-4.2.0.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-common\2.6.5\hadoop-common-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-annotations\2.6.5\hadoop-annotations-2.6.5.jar;D:\OpenSource\jdk1.8.0\lib\tools.jar;E:\WorkSpace\Maven\com\google\guava\guava\11.0.2\guava-11.0.2.jar;E:\WorkSpace\Maven\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;E:\WorkSpace\Maven\org\apache\commons\commons-math3\3.1.1\commons-math3-3.1.1.jar;E:\WorkSpace\Maven\xmlenc\xmlenc\0.52\xmlenc-0.52.jar;E:\WorkSpace\Maven\commons-httpclient\commons-httpclient\3.1\commons-httpclient-3.1.jar;E:\WorkSpace\Maven\javax\servlet\servlet-api\2.5\servlet-api-2.5.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jetty\6.1.26\jetty-6.1.26.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jetty-util\6.1.26\jetty-util-6.1.26.jar;E:\WorkSpace\Maven\com\sun\jersey\jersey-core\1.9\jersey-core-1.9.jar;E:\WorkSpace\Maven\com\sun\jersey\jersey-json\1.9\jersey-json-1.9.jar;E:\WorkSpace\Maven\org\codehaus\jettison\jettison\1.1\jettison-1.1.jar;E:\WorkSpace\Maven\com\sun\xml\bind\jaxb-impl\2.2.3-1\jaxb-impl-2.2.3-1.jar;E:\WorkSpace\Maven\javax\xml\bind\jaxb-api\2.2.2\jaxb-api-2.2.2.jar;E:\WorkSpace\Maven\javax\xml\stream\stax-api\1.0-2\stax-api-1.0-2.jar;E:\WorkSpace\Maven\javax\activation\activation\1.1\activation-1.1.jar;E:\WorkSpace\Maven\org\codehaus\jackson\jackson-jaxrs\1.8.8\jackson-jaxrs-1.8.8.jar;E:\WorkSpace\Maven\org\codehaus\jackson\jackson-xc\1.8.3\jackson-xc-1.8.3.jar;E:\WorkSpace\Maven\com\sun\jersey\jersey-server\1.9\jersey-server-1.9.jar;E:\WorkSpace\Maven\tomcat\jasper-compiler\5.5.23\jasper-compiler-5.5.23.jar;E:\WorkSpace\Maven\tomcat\jasper-runtime\5.5.23\jasper-runtime-5.5.23.jar;E:\WorkSpace\Maven\commons-el\commons-el\1.0\commons-el-1.0.jar;E:\WorkSpace\Maven\javax\servlet\jsp\jsp-api\2.1\jsp-api-2.1.jar;E:\WorkSpace\Maven\net\java\dev\jets3t\jets3t\0.9.0\jets3t-0.9.0.jar;E:\WorkSpace\Maven\com\jamesmurty\utils\java-xmlbuilder\0.4\java-xmlbuilder-0.4.jar;E:\WorkSpace\Maven\commons-configuration\commons-configuration\1.6\commons-configuration-1.6.jar;E:\WorkSpace\Maven\commons-beanutils\commons-beanutils-core\1.8.0\commons-beanutils-core-1.8.0.jar;E:\WorkSpace\Maven\org\apache\avro\avro\1.7.4\avro-1.7.4.jar;E:\WorkSpace\Maven\com\thoughtworks\paranamer\paranamer\2.3\paranamer-2.3.jar;E:\WorkSpace\Maven\org\xerial\snappy\snappy-java\1.0.5\snappy-java-1.0.5.jar;E:\WorkSpace\Maven\org\apache\commons\commons-compress\1.4.1\commons-compress-1.4.1.jar;E:\WorkSpace\Maven\org\tukaani\xz\1.0\xz-1.0.jar;E:\WorkSpace\Maven\com\google\protobuf\protobuf-java\2.5.0\protobuf-java-2.5.0.jar;E:\WorkSpace\Maven\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-auth\2.6.5\hadoop-auth-2.6.5.jar;E:\WorkSpace\Maven\org\apache\directory\server\apacheds-kerberos-codec\2.0.0-M15\apacheds-kerberos-codec-2.0.0-M15.jar;E:\WorkSpace\Maven\org\apache\directory\server\apacheds-i18n\2.0.0-M15\apacheds-i18n-2.0.0-M15.jar;E:\WorkSpace\Maven\org\apache\directory\api\api-asn1-api\1.0.0-M20\api-asn1-api-1.0.0-M20.jar;E:\WorkSpace\Maven\org\apache\directory\api\api-util\1.0.0-M20\api-util-1.0.0-M20.jar;E:\WorkSpace\Maven\org\apache\curator\curator-framework\2.6.0\curator-framework-2.6.0.jar;E:\WorkSpace\Maven\org\apache\curator\curator-client\2.6.0\curator-client-2.6.0.jar;E:\WorkSpace\Maven\com\jcraft\jsch\0.1.42\jsch-0.1.42.jar;E:\WorkSpace\Maven\org\apache\curator\curator-recipes\2.6.0\curator-recipes-2.6.0.jar;E:\WorkSpace\Maven\org\htrace\htrace-core\3.0.4\htrace-core-3.0.4.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-client\2.6.5\hadoop-client-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-hdfs\2.6.5\hadoop-hdfs-2.6.5.jar;E:\WorkSpace\Maven\io\netty\netty\3.6.2.Final\netty-3.6.2.Final.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-app\2.6.5\hadoop-mapreduce-client-app-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-common\2.6.5\hadoop-mapreduce-client-common-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-common\2.6.5\hadoop-yarn-common-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-api\2.6.5\hadoop-yarn-api-2.6.5.jar;E:\WorkSpace\Maven\com\sun\jersey\jersey-client\1.9\jersey-client-1.9.jar;E:\WorkSpace\Maven\com\google\inject\guice\3.0\guice-3.0.jar;E:\WorkSpace\Maven\javax\inject\javax.inject\1\javax.inject-1.jar;E:\WorkSpace\Maven\com\sun\jersey\contribs\jersey-guice\1.9\jersey-guice-1.9.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-client\2.6.5\hadoop-yarn-client-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-core\2.6.5\hadoop-mapreduce-client-core-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-server-common\2.6.5\hadoop-yarn-server-common-2.6.5.jar;E:\WorkSpace\Maven\org\fusesource\leveldbjni\leveldbjni-all\1.8\leveldbjni-all-1.8.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-shuffle\2.6.5\hadoop-mapreduce-client-shuffle-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-jobclient\2.6.5\hadoop-mapreduce-client-jobclient-2.6.5.jar;E:\WorkSpace\Maven\commons-daemon\commons-daemon\1.0.13\commons-daemon-1.0.13.jar;E:\WorkSpace\Maven\org\apache\hive\hive-exec\1.2.1\hive-exec-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-ant\1.2.1\hive-ant-1.2.1.jar;E:\WorkSpace\Maven\org\apache\velocity\velocity\1.5\velocity-1.5.jar;E:\WorkSpace\Maven\org\apache\hive\hive-metastore\1.2.1\hive-metastore-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-serde\1.2.1\hive-serde-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-common\1.2.1\hive-common-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-shims\1.2.1\hive-shims-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\shims\hive-shims-common\1.2.1\hive-shims-common-1.2.1.jar;E:\WorkSpace\Maven\log4j\apache-log4j-extras\1.2.17\apache-log4j-extras-1.2.17.jar;E:\WorkSpace\Maven\org\apache\thrift\libthrift\0.9.2\libthrift-0.9.2.jar;E:\WorkSpace\Maven\org\apache\hive\shims\hive-shims-0.20S\1.2.1\hive-shims-0.20S-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\shims\hive-shims-0.23\1.2.1\hive-shims-0.23-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-server-resourcemanager\2.6.0\hadoop-yarn-server-resourcemanager-2.6.0.jar;E:\WorkSpace\Maven\com\google\inject\extensions\guice-servlet\3.0\guice-servlet-3.0.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-server-applicationhistoryservice\2.6.0\hadoop-yarn-server-applicationhistoryservice-2.6.0.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-server-web-proxy\2.6.0\hadoop-yarn-server-web-proxy-2.6.0.jar;E:\WorkSpace\Maven\org\apache\hive\shims\hive-shims-scheduler\1.2.1\hive-shims-scheduler-1.2.1.jar;E:\WorkSpace\Maven\joda-time\joda-time\2.6\joda-time-2.6.jar;E:\WorkSpace\Maven\org\json\json\20090211\json-20090211.jar;E:\WorkSpace\Maven\net\sf\opencsv\opencsv\2.3\opencsv-2.3.jar;E:\WorkSpace\Maven\com\twitter\parquet-hadoop-bundle\1.6.0\parquet-hadoop-bundle-1.6.0.jar;E:\WorkSpace\Maven\com\jolbox\bonecp\0.8.0.RELEASE\bonecp-0.8.0.RELEASE.jar;E:\WorkSpace\Maven\org\apache\derby\derby\10.10.2.0\derby-10.10.2.0.jar;E:\WorkSpace\Maven\org\datanucleus\datanucleus-api-jdo\3.2.6\datanucleus-api-jdo-3.2.6.jar;E:\WorkSpace\Maven\org\datanucleus\datanucleus-core\3.2.10\datanucleus-core-3.2.10.jar;E:\WorkSpace\Maven\org\datanucleus\datanucleus-rdbms\3.2.9\datanucleus-rdbms-3.2.9.jar;E:\WorkSpace\Maven\commons-pool\commons-pool\1.6\commons-pool-1.6.jar;E:\WorkSpace\Maven\commons-dbcp\commons-dbcp\1.4\commons-dbcp-1.4.jar;E:\WorkSpace\Maven\javax\jdo\jdo-api\3.0.1\jdo-api-3.0.1.jar;E:\WorkSpace\Maven\org\antlr\antlr-runtime\3.4\antlr-runtime-3.4.jar;E:\WorkSpace\Maven\org\antlr\stringtemplate\3.2.1\stringtemplate-3.2.1.jar;E:\WorkSpace\Maven\org\apache\thrift\libfb303\0.9.2\libfb303-0.9.2.jar;E:\WorkSpace\Maven\org\antlr\ST4\4.0.4\ST4-4.0.4.jar;E:\WorkSpace\Maven\org\apache\ivy\ivy\2.4.0\ivy-2.4.0.jar;E:\WorkSpace\Maven\org\codehaus\groovy\groovy-all\2.1.6\groovy-all-2.1.6.jar;E:\WorkSpace\Maven\org\apache\calcite\calcite-core\1.2.0-incubating\calcite-core-1.2.0-incubating.jar;E:\WorkSpace\Maven\org\apache\calcite\calcite-avatica\1.2.0-incubating\calcite-avatica-1.2.0-incubating.jar;E:\WorkSpace\Maven\org\apache\calcite\calcite-linq4j\1.2.0-incubating\calcite-linq4j-1.2.0-incubating.jar;E:\WorkSpace\Maven\net\hydromatic\eigenbase-properties\1.1.5\eigenbase-properties-1.1.5.jar;E:\WorkSpace\Maven\org\codehaus\janino\janino\2.7.6\janino-2.7.6.jar;E:\WorkSpace\Maven\org\codehaus\janino\commons-compiler\2.7.6\commons-compiler-2.7.6.jar;E:\WorkSpace\Maven\org\pentaho\pentaho-aggdesigner-algorithm\5.1.5-jhyde\pentaho-aggdesigner-algorithm-5.1.5-jhyde.jar;E:\WorkSpace\Maven\stax\stax-api\1.0.1\stax-api-1.0.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-jdbc\1.2.1\hive-jdbc-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-service\1.2.1\hive-service-1.2.1.jar;E:\WorkSpace\Maven\net\sf\jpam\jpam\1.1\jpam-1.1.jar;E:\WorkSpace\Maven\org\eclipse\jetty\aggregate\jetty-all\7.6.0.v20120127\jetty-all-7.6.0.v20120127.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-jta_1.1_spec\1.1.1\geronimo-jta_1.1_spec-1.1.1.jar;E:\WorkSpace\Maven\javax\mail\mail\1.4.7\mail-1.4.7.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-jaspic_1.0_spec\1.0\geronimo-jaspic_1.0_spec-1.0.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-annotation_1.0_spec\1.1.1\geronimo-annotation_1.0_spec-1.1.1.jar;E:\WorkSpace\Maven\asm\asm-commons\3.1\asm-commons-3.1.jar;E:\WorkSpace\Maven\asm\asm-tree\3.1\asm-tree-3.1.jar;E:\WorkSpace\Maven\com\github\stephenc\findbugs\findbugs-annotations\1.3.9-1\findbugs-annotations-1.3.9-1.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-client\0.99.2\hbase-client-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-annotations\0.99.2\hbase-annotations-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-common\0.99.2\hbase-common-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-protocol\0.99.2\hbase-protocol-0.99.2.jar;E:\WorkSpace\Maven\io\netty\netty-all\4.0.24.Final\netty-all-4.0.24.Final.jar;E:\WorkSpace\Maven\org\jruby\joni\joni\2.1.2\joni-2.1.2.jar;E:\WorkSpace\Maven\org\jruby\jcodings\jcodings\1.0.8\jcodings-1.0.8.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-server\0.99.2\hbase-server-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-prefix-tree\0.99.2\hbase-prefix-tree-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-common\0.99.2\hbase-common-0.99.2-tests.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-hadoop-compat\0.99.2\hbase-hadoop-compat-0.99.2.jar;E:\WorkSpace\Maven\org\apache\commons\commons-math\2.2\commons-math-2.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-hadoop2-compat\0.99.2\hbase-hadoop2-compat-0.99.2.jar;E:\WorkSpace\Maven\com\yammer\metrics\metrics-core\2.2.0\metrics-core-2.2.0.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jetty-sslengine\6.1.26\jetty-sslengine-6.1.26.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jsp-2.1\6.1.14\jsp-2.1-6.1.14.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jsp-api-2.1\6.1.14\jsp-api-2.1-6.1.14.jar;E:\WorkSpace\Maven\org\mortbay\jetty\servlet-api-2.5\6.1.14\servlet-api-2.5-6.1.14.jar;E:\WorkSpace\Maven\org\jamon\jamon-runtime\2.3.1\jamon-runtime-2.3.1.jar;E:\WorkSpace\Maven\com\lmax\disruptor\3.3.0\disruptor-3.3.0.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-core\4.10.3\lucene-core-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-queryparser\4.10.3\lucene-queryparser-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-queries\4.10.3\lucene-queries-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-sandbox\4.10.3\lucene-sandbox-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-analyzers-common\4.10.3\lucene-analyzers-common-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-analyzers-smartcn\4.10.3\lucene-analyzers-smartcn-4.10.3.jar;E:\WorkSpace\Maven\com\janeluo\ikanalyzer\2012_u6\ikanalyzer-2012_u6.jar;E:\WorkSpace\Maven\org\apache\solr\solr-solrj\4.10.3\solr-solrj-4.10.3.jar;E:\WorkSpace\Maven\org\codehaus\woodstox\wstx-asl\3.2.7\wstx-asl-3.2.7.jar;E:\WorkSpace\Maven\org\noggit\noggit\0.5\noggit-0.5.jar;E:\WorkSpace\Maven\org\mybatis\mybatis\3.2.8\mybatis-3.2.8.jar;E:\WorkSpace\Maven\org\mybatis\mybatis-spring\1.2.2\mybatis-spring-1.2.2.jar;E:\WorkSpace\Maven\mysql\mysql-connector-java\5.1.32\mysql-connector-java-5.1.32.jar;E:\WorkSpace\Maven\org\apache\kafka\kafka_2.9.2\0.8.1\kafka_2.9.2-0.8.1.jar;E:\WorkSpace\Maven\org\scala-lang\scala-library\2.9.2\scala-library-2.9.2.jar;E:\WorkSpace\Maven\com\yammer\metrics\metrics-annotation\2.2.0\metrics-annotation-2.2.0.jar;E:\WorkSpace\Maven\net\sf\jopt-simple\jopt-simple\3.2\jopt-simple-3.2.jar;E:\WorkSpace\Maven\org\mongodb\mongo-java-driver\3.4.2\mongo-java-driver-3.4.2.jar;E:\WorkSpace\Maven\org\hibernate\hibernate-core\5.1.2.Final\hibernate-core-5.1.2.Final.jar;E:\WorkSpace\Maven\org\jboss\logging\jboss-logging\3.3.0.Final\jboss-logging-3.3.0.Final.jar;E:\WorkSpace\Maven\org\hibernate\javax\persistence\hibernate-jpa-2.1-api\1.0.0.Final\hibernate-jpa-2.1-api-1.0.0.Final.jar;E:\WorkSpace\Maven\org\javassist\javassist\3.20.0-GA\javassist-3.20.0-GA.jar;E:\WorkSpace\Maven\org\jboss\jandex\2.0.0.Final\jandex-2.0.0.Final.jar;E:\WorkSpace\Maven\com\fasterxml\classmate\1.3.0\classmate-1.3.0.jar;E:\WorkSpace\Maven\org\hibernate\common\hibernate-commons-annotations\5.0.1.Final\hibernate-commons-annotations-5.0.1.Final.jar;E:\WorkSpace\Maven\org\activiti\activiti-engine\5.22.0\activiti-engine-5.22.0.jar;E:\WorkSpace\Maven\org\activiti\activiti-bpmn-converter\5.22.0\activiti-bpmn-converter-5.22.0.jar;E:\WorkSpace\Maven\org\activiti\activiti-bpmn-model\5.22.0\activiti-bpmn-model-5.22.0.jar;E:\WorkSpace\Maven\org\slf4j\jcl-over-slf4j\1.7.6\jcl-over-slf4j-1.7.6.jar;E:\WorkSpace\Maven\org\activiti\activiti-process-validation\5.22.0\activiti-process-validation-5.22.0.jar;E:\WorkSpace\Maven\org\activiti\activiti-image-generator\5.22.0\activiti-image-generator-5.22.0.jar;E:\WorkSpace\Maven\org\apache\commons\commons-email\1.4\commons-email-1.4.jar;E:\WorkSpace\Maven\com\sun\mail\javax.mail\1.5.2\javax.mail-1.5.2.jar;E:\WorkSpace\Maven\org\apache\tomcat\jsp-api\6.0.37\jsp-api-6.0.37.jar;E:\WorkSpace\Maven\org\apache\tomcat\el-api\6.0.37\el-api-6.0.37.jar;E:\WorkSpace\Maven\org\apache\tomcat\servlet-api\6.0.37\servlet-api-6.0.37.jar;E:\WorkSpace\Maven\org\freemarker\freemarker\2.3.19\freemarker-2.3.19.jar;E:\WorkSpace\Maven\com\alibaba\druid\1.0.12\druid-1.0.12.jar;D:\OpenSource\jdk1.8.0\lib\jconsole.jar;E:\WorkSpace\Maven\com\alibaba\fastjson\1.1.41\fastjson-1.1.41.jar;E:\WorkSpace\Maven\org\apache\activemq\activemq-all\5.11.1\activemq-all-5.11.1.jar;E:\WorkSpace\Maven\org\apache\activemq\activemq-pool\5.11.1\activemq-pool-5.11.1.jar;E:\WorkSpace\Maven\org\apache\activemq\activemq-jms-pool\5.11.1\activemq-jms-pool-5.11.1.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-jms_1.1_spec\1.1.1\geronimo-jms_1.1_spec-1.1.1.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-jta_1.0.1B_spec\1.0.1\geronimo-jta_1.0.1B_spec-1.0.1.jar;E:\WorkSpace\Maven\org\apache\activemq\activemq-client\5.11.1\activemq-client-5.11.1.jar;E:\WorkSpace\Maven\org\fusesource\hawtbuf\hawtbuf\1.11\hawtbuf-1.11.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-j2ee-management_1.1_spec\1.0.1\geronimo-j2ee-management_1.1_spec-1.0.1.jar;E:\WorkSpace\Maven\org\mozilla\rhino\1.7R4\rhino-1.7R4.jar;E:\WorkSpace\Maven\com\yahoo\platform\yui\yuicompressor\2.4.8\yuicompressor-2.4.8.jar;E:\WorkSpace\Maven\rhino\js\1.7R2\js-1.7R2.jar;E:\WorkSpace\Maven\net\sf\ehcache\ehcache\2.10.4\ehcache-2.10.4.jar
+[INFO ][20180527 21:09:49,485][Environment:100] Client environment:java.library.path=D:\OpenSource\jdk1.8.0\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:/OpenSource/jdk1.8.0/jre/bin/server;D:/OpenSource/jdk1.8.0/jre/bin;D:/OpenSource/jdk1.8.0/jre/lib/amd64;D:\SoftWare\nSC\python;D:\SoftWare\nSC\bin;D:\app\SuperWang\product\11.2.0\dbhome_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\OpenSource\Subversion\bin;D:\SoftWare\StorageExecutive;D:\OpenSource\hadoop-2.6.5\bin;D:\OpenSource\TortoiesSVN\bin;C:\Users\SuperWang\.app\;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;%JAVA_HOME%\bin;%MYSQL_HOME%\bin;%SVN_HOME%\bin;%MAVEN_HOME%\bin;%FFMEG_HOME%\bin;;D:\OpenSource\eclipse4.6;;.
+[INFO ][20180527 21:09:49,485][Environment:100] Client environment:java.io.tmpdir=E:\SUPERW~1\Temp\
+[INFO ][20180527 21:09:49,486][Environment:100] Client environment:java.compiler=<NA>
+[INFO ][20180527 21:09:49,487][Environment:100] Client environment:os.name=Windows 10
+[INFO ][20180527 21:09:49,487][Environment:100] Client environment:os.arch=amd64
+[INFO ][20180527 21:09:49,487][Environment:100] Client environment:os.version=10.0
+[INFO ][20180527 21:09:49,487][Environment:100] Client environment:user.name=SuperWang
+[INFO ][20180527 21:09:49,487][Environment:100] Client environment:user.home=C:\Users\SuperWang
+[INFO ][20180527 21:09:49,487][Environment:100] Client environment:user.dir=E:\WorkSpace\Eclipse4.6\StudyProject
+[INFO ][20180527 21:09:49,489][ZooKeeper:438] Initiating client connection, connectString=192.168.0.71:2181,192.168.0.72:2181,192.168.0.73:2181 sessionTimeout=6000 watcher=org.I0Itec.zkclient.ZkClient@4fe767f3
+[INFO ][20180527 21:09:55,567][ZkEventThread:82] Terminate ZkClient event thread.
+[INFO ][20180527 21:09:58,574][ClientCnxn$SendThread:966] Opening socket connection to server 192.168.0.73/192.168.0.73:2181. Will not attempt to authenticate using SASL (unknown error)
+[INFO ][20180527 21:09:58,683][ZooKeeper:684] Session: 0x0 closed
+[INFO ][20180527 21:09:58,683][ClientCnxn$EventThread:509] EventThread shut down
+[INFO ][20180527 21:10:50,686][Logging$class:68] Verifying properties
+[INFO ][20180527 21:10:50,732][Logging$class:68] Property auto.commit.interval.ms is overridden to 1000
+[INFO ][20180527 21:10:50,734][Logging$class:68] Property auto.offset.reset is overridden to largest
+[INFO ][20180527 21:10:50,734][Logging$class:68] Property group.id is overridden to dashujujiagoushi
+[WARN ][20180527 21:10:50,735][Logging$class:83] Property partition.assignment.strategy is not valid
+[INFO ][20180527 21:10:50,735][Logging$class:68] Property zookeeper.connect is overridden to 192.168.0.71:2181,192.168.0.72:2181,192.168.0.73:2181
+[INFO ][20180527 21:10:51,276][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], Connecting to zookeeper instance at 192.168.0.71:2181,192.168.0.72:2181,192.168.0.73:2181
+[INFO ][20180527 21:10:51,288][ZkEventThread:64] Starting ZkClient event thread.
+[INFO ][20180527 21:10:51,307][Environment:100] Client environment:zookeeper.version=3.4.5-1392090, built on 09/30/2012 17:52 GMT
+[INFO ][20180527 21:10:51,307][Environment:100] Client environment:host.name=SuperWang
+[INFO ][20180527 21:10:51,307][Environment:100] Client environment:java.version=1.8.0_111
+[INFO ][20180527 21:10:51,308][Environment:100] Client environment:java.vendor=Oracle Corporation
+[INFO ][20180527 21:10:51,308][Environment:100] Client environment:java.home=D:\OpenSource\jdk1.8.0\jre
+[INFO ][20180527 21:10:51,308][Environment:100] Client environment:java.class.path=E:\WorkSpace\Eclipse4.6\StudyProject\target\classes;E:\WorkSpace\Maven\org\jsoup\jsoup\1.9.1\jsoup-1.9.1.jar;E:\WorkSpace\Maven\net\sourceforge\htmlunit\htmlunit\2.18\htmlunit-2.18.jar;E:\WorkSpace\Maven\xalan\xalan\2.7.1\xalan-2.7.1.jar;E:\WorkSpace\Maven\xalan\serializer\2.7.1\serializer-2.7.1.jar;E:\WorkSpace\Maven\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar;E:\WorkSpace\Maven\commons-collections\commons-collections\3.2\commons-collections-3.2.jar;E:\WorkSpace\Maven\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar;E:\WorkSpace\Maven\org\apache\httpcomponents\httpclient\4.5\httpclient-4.5.jar;E:\WorkSpace\Maven\org\apache\httpcomponents\httpcore\4.4\httpcore-4.4.jar;E:\WorkSpace\Maven\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar;E:\WorkSpace\Maven\commons-codec\commons-codec\1.8\commons-codec-1.8.jar;E:\WorkSpace\Maven\org\apache\httpcomponents\httpmime\4.5\httpmime-4.5.jar;E:\WorkSpace\Maven\net\sourceforge\htmlunit\htmlunit-core-js\2.17\htmlunit-core-js-2.17.jar;E:\WorkSpace\Maven\xerces\xercesImpl\2.11.0\xercesImpl-2.11.0.jar;E:\WorkSpace\Maven\net\sourceforge\nekohtml\nekohtml\1.9.22\nekohtml-1.9.22.jar;E:\WorkSpace\Maven\net\sourceforge\cssparser\cssparser\0.9.16\cssparser-0.9.16.jar;E:\WorkSpace\Maven\org\w3c\css\sac\1.3\sac-1.3.jar;E:\WorkSpace\Maven\commons-io\commons-io\2.0.1\commons-io-2.0.1.jar;E:\WorkSpace\Maven\org\eclipse\jetty\websocket\websocket-client\9.2.12.v20150709\websocket-client-9.2.12.v20150709.jar;E:\WorkSpace\Maven\org\eclipse\jetty\jetty-util\9.2.12.v20150709\jetty-util-9.2.12.v20150709.jar;E:\WorkSpace\Maven\org\eclipse\jetty\jetty-io\9.2.12.v20150709\jetty-io-9.2.12.v20150709.jar;E:\WorkSpace\Maven\org\eclipse\jetty\websocket\websocket-common\9.2.12.v20150709\websocket-common-9.2.12.v20150709.jar;E:\WorkSpace\Maven\org\eclipse\jetty\websocket\websocket-api\9.2.12.v20150709\websocket-api-9.2.12.v20150709.jar;E:\WorkSpace\Maven\antlr\antlr\2.7.6\antlr-2.7.6.jar;E:\WorkSpace\Maven\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;E:\WorkSpace\Maven\org\aspectj\aspectjweaver\1.7.3\aspectjweaver-1.7.3.jar;E:\WorkSpace\Maven\cglib\cglib\2.2.2\cglib-2.2.2.jar;E:\WorkSpace\Maven\asm\asm\3.3.1\asm-3.3.1.jar;E:\WorkSpace\Maven\net\sf\json-lib\json-lib\2.3\json-lib-2.3-jdk15.jar;E:\WorkSpace\Maven\commons-beanutils\commons-beanutils\1.8.0\commons-beanutils-1.8.0.jar;E:\WorkSpace\Maven\commons-lang\commons-lang\2.4\commons-lang-2.4.jar;E:\WorkSpace\Maven\net\sf\ezmorph\ezmorph\1.0.6\ezmorph-1.0.6.jar;E:\WorkSpace\Maven\org\codehaus\jackson\jackson-core-asl\1.9.13\jackson-core-asl-1.9.13.jar;E:\WorkSpace\Maven\org\codehaus\jackson\jackson-mapper-asl\1.9.13\jackson-mapper-asl-1.9.13.jar;E:\WorkSpace\Maven\ognl\ognl\3.0.6\ognl-3.0.6.jar;E:\WorkSpace\Maven\javassist\javassist\3.12.1.GA\javassist-3.12.1.GA.jar;E:\WorkSpace\Maven\oro\oro\2.0.8\oro-2.0.8.jar;E:\WorkSpace\Maven\commons-net\commons-net\3.2\commons-net-3.2.jar;E:\WorkSpace\Maven\commons-digester\commons-digester\2.0\commons-digester-2.0.jar;E:\WorkSpace\Maven\commons-fileupload\commons-fileupload\1.3.1\commons-fileupload-1.3.1.jar;E:\WorkSpace\Maven\commons-validator\commons-validator\1.1.4\commons-validator-1.1.4.jar;E:\WorkSpace\Maven\commons-cli\commons-cli\1.2\commons-cli-1.2.jar;E:\WorkSpace\Maven\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;E:\WorkSpace\Maven\jstl\jstl\1.2\jstl-1.2.jar;E:\WorkSpace\Maven\javax\transaction\jta\1.1\jta-1.1.jar;E:\WorkSpace\Maven\log4j\log4j\1.2.17\log4j-1.2.17.jar;E:\WorkSpace\Maven\org\slf4j\slf4j-api\1.7.5\slf4j-api-1.7.5.jar;E:\WorkSpace\Maven\org\slf4j\slf4j-log4j12\1.7.5\slf4j-log4j12-1.7.5.jar;E:\WorkSpace\Maven\net\sourceforge\jexcelapi\jxl\2.6.12\jxl-2.6.12.jar;E:\WorkSpace\Maven\org\jdom\jdom\1.1.3\jdom-1.1.3.jar;E:\WorkSpace\Maven\jaxen\jaxen\1.1.1\jaxen-1.1.1.jar;E:\WorkSpace\Maven\jdom\jdom\1.0\jdom-1.0.jar;E:\WorkSpace\Maven\xom\xom\1.0\xom-1.0.jar;E:\WorkSpace\Maven\xerces\xmlParserAPIs\2.6.2\xmlParserAPIs-2.6.2.jar;E:\WorkSpace\Maven\com\ibm\icu\icu4j\2.6.1\icu4j-2.6.1.jar;E:\WorkSpace\Maven\redis\clients\jedis\2.9.0\jedis-2.9.0.jar;E:\WorkSpace\Maven\org\apache\commons\commons-pool2\2.4.2\commons-pool2-2.4.2.jar;E:\WorkSpace\Maven\org\apache\ant\ant\1.10.1\ant-1.10.1.jar;E:\WorkSpace\Maven\org\apache\ant\ant-launcher\1.10.1\ant-launcher-1.10.1.jar;E:\WorkSpace\Maven\org\apache\zookeeper\zookeeper\3.4.5\zookeeper-3.4.5.jar;E:\WorkSpace\Maven\jline\jline\0.9.94\jline-0.9.94.jar;E:\WorkSpace\Maven\org\jboss\netty\netty\3.2.5.Final\netty-3.2.5.Final.jar;E:\WorkSpace\Maven\com\101tec\zkclient\0.3\zkclient-0.3.jar;E:\WorkSpace\Maven\org\springframework\spring-aop\4.2.9.RELEASE\spring-aop-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-beans\4.2.9.RELEASE\spring-beans-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-core\4.2.9.RELEASE\spring-core-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-aspects\4.2.9.RELEASE\spring-aspects-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-context\4.2.9.RELEASE\spring-context-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-expression\4.2.9.RELEASE\spring-expression-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-context-support\4.2.9.RELEASE\spring-context-support-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-instrument\4.2.9.RELEASE\spring-instrument-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-instrument-tomcat\4.2.9.RELEASE\spring-instrument-tomcat-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-jdbc\4.2.9.RELEASE\spring-jdbc-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-tx\4.2.9.RELEASE\spring-tx-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-jms\4.2.9.RELEASE\spring-jms-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-messaging\4.2.9.RELEASE\spring-messaging-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-orm\4.2.9.RELEASE\spring-orm-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-oxm\4.2.9.RELEASE\spring-oxm-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-web\4.2.9.RELEASE\spring-web-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-webmvc\4.2.9.RELEASE\spring-webmvc-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\spring-webmvc-portlet\4.2.9.RELEASE\spring-webmvc-portlet-4.2.9.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\amqp\spring-rabbit\1.7.5.RELEASE\spring-rabbit-1.7.5.RELEASE.jar;E:\WorkSpace\Maven\org\springframework\retry\spring-retry\1.2.1.RELEASE\spring-retry-1.2.1.RELEASE.jar;E:\WorkSpace\Maven\com\rabbitmq\http-client\1.1.1.RELEASE\http-client-1.1.1.RELEASE.jar;E:\WorkSpace\Maven\com\fasterxml\jackson\core\jackson-databind\2.8.4\jackson-databind-2.8.4.jar;E:\WorkSpace\Maven\com\fasterxml\jackson\core\jackson-annotations\2.8.0\jackson-annotations-2.8.0.jar;E:\WorkSpace\Maven\com\fasterxml\jackson\core\jackson-core\2.8.4\jackson-core-2.8.4.jar;E:\WorkSpace\Maven\org\springframework\amqp\spring-amqp\1.7.5.RELEASE\spring-amqp-1.7.5.RELEASE.jar;E:\WorkSpace\Maven\com\rabbitmq\amqp-client\4.2.0\amqp-client-4.2.0.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-common\2.6.5\hadoop-common-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-annotations\2.6.5\hadoop-annotations-2.6.5.jar;D:\OpenSource\jdk1.8.0\lib\tools.jar;E:\WorkSpace\Maven\com\google\guava\guava\11.0.2\guava-11.0.2.jar;E:\WorkSpace\Maven\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;E:\WorkSpace\Maven\org\apache\commons\commons-math3\3.1.1\commons-math3-3.1.1.jar;E:\WorkSpace\Maven\xmlenc\xmlenc\0.52\xmlenc-0.52.jar;E:\WorkSpace\Maven\commons-httpclient\commons-httpclient\3.1\commons-httpclient-3.1.jar;E:\WorkSpace\Maven\javax\servlet\servlet-api\2.5\servlet-api-2.5.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jetty\6.1.26\jetty-6.1.26.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jetty-util\6.1.26\jetty-util-6.1.26.jar;E:\WorkSpace\Maven\com\sun\jersey\jersey-core\1.9\jersey-core-1.9.jar;E:\WorkSpace\Maven\com\sun\jersey\jersey-json\1.9\jersey-json-1.9.jar;E:\WorkSpace\Maven\org\codehaus\jettison\jettison\1.1\jettison-1.1.jar;E:\WorkSpace\Maven\com\sun\xml\bind\jaxb-impl\2.2.3-1\jaxb-impl-2.2.3-1.jar;E:\WorkSpace\Maven\javax\xml\bind\jaxb-api\2.2.2\jaxb-api-2.2.2.jar;E:\WorkSpace\Maven\javax\xml\stream\stax-api\1.0-2\stax-api-1.0-2.jar;E:\WorkSpace\Maven\javax\activation\activation\1.1\activation-1.1.jar;E:\WorkSpace\Maven\org\codehaus\jackson\jackson-jaxrs\1.8.8\jackson-jaxrs-1.8.8.jar;E:\WorkSpace\Maven\org\codehaus\jackson\jackson-xc\1.8.3\jackson-xc-1.8.3.jar;E:\WorkSpace\Maven\com\sun\jersey\jersey-server\1.9\jersey-server-1.9.jar;E:\WorkSpace\Maven\tomcat\jasper-compiler\5.5.23\jasper-compiler-5.5.23.jar;E:\WorkSpace\Maven\tomcat\jasper-runtime\5.5.23\jasper-runtime-5.5.23.jar;E:\WorkSpace\Maven\commons-el\commons-el\1.0\commons-el-1.0.jar;E:\WorkSpace\Maven\javax\servlet\jsp\jsp-api\2.1\jsp-api-2.1.jar;E:\WorkSpace\Maven\net\java\dev\jets3t\jets3t\0.9.0\jets3t-0.9.0.jar;E:\WorkSpace\Maven\com\jamesmurty\utils\java-xmlbuilder\0.4\java-xmlbuilder-0.4.jar;E:\WorkSpace\Maven\commons-configuration\commons-configuration\1.6\commons-configuration-1.6.jar;E:\WorkSpace\Maven\commons-beanutils\commons-beanutils-core\1.8.0\commons-beanutils-core-1.8.0.jar;E:\WorkSpace\Maven\org\apache\avro\avro\1.7.4\avro-1.7.4.jar;E:\WorkSpace\Maven\com\thoughtworks\paranamer\paranamer\2.3\paranamer-2.3.jar;E:\WorkSpace\Maven\org\xerial\snappy\snappy-java\1.0.5\snappy-java-1.0.5.jar;E:\WorkSpace\Maven\org\apache\commons\commons-compress\1.4.1\commons-compress-1.4.1.jar;E:\WorkSpace\Maven\org\tukaani\xz\1.0\xz-1.0.jar;E:\WorkSpace\Maven\com\google\protobuf\protobuf-java\2.5.0\protobuf-java-2.5.0.jar;E:\WorkSpace\Maven\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-auth\2.6.5\hadoop-auth-2.6.5.jar;E:\WorkSpace\Maven\org\apache\directory\server\apacheds-kerberos-codec\2.0.0-M15\apacheds-kerberos-codec-2.0.0-M15.jar;E:\WorkSpace\Maven\org\apache\directory\server\apacheds-i18n\2.0.0-M15\apacheds-i18n-2.0.0-M15.jar;E:\WorkSpace\Maven\org\apache\directory\api\api-asn1-api\1.0.0-M20\api-asn1-api-1.0.0-M20.jar;E:\WorkSpace\Maven\org\apache\directory\api\api-util\1.0.0-M20\api-util-1.0.0-M20.jar;E:\WorkSpace\Maven\org\apache\curator\curator-framework\2.6.0\curator-framework-2.6.0.jar;E:\WorkSpace\Maven\org\apache\curator\curator-client\2.6.0\curator-client-2.6.0.jar;E:\WorkSpace\Maven\com\jcraft\jsch\0.1.42\jsch-0.1.42.jar;E:\WorkSpace\Maven\org\apache\curator\curator-recipes\2.6.0\curator-recipes-2.6.0.jar;E:\WorkSpace\Maven\org\htrace\htrace-core\3.0.4\htrace-core-3.0.4.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-client\2.6.5\hadoop-client-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-hdfs\2.6.5\hadoop-hdfs-2.6.5.jar;E:\WorkSpace\Maven\io\netty\netty\3.6.2.Final\netty-3.6.2.Final.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-app\2.6.5\hadoop-mapreduce-client-app-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-common\2.6.5\hadoop-mapreduce-client-common-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-common\2.6.5\hadoop-yarn-common-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-api\2.6.5\hadoop-yarn-api-2.6.5.jar;E:\WorkSpace\Maven\com\sun\jersey\jersey-client\1.9\jersey-client-1.9.jar;E:\WorkSpace\Maven\com\google\inject\guice\3.0\guice-3.0.jar;E:\WorkSpace\Maven\javax\inject\javax.inject\1\javax.inject-1.jar;E:\WorkSpace\Maven\com\sun\jersey\contribs\jersey-guice\1.9\jersey-guice-1.9.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-client\2.6.5\hadoop-yarn-client-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-core\2.6.5\hadoop-mapreduce-client-core-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-server-common\2.6.5\hadoop-yarn-server-common-2.6.5.jar;E:\WorkSpace\Maven\org\fusesource\leveldbjni\leveldbjni-all\1.8\leveldbjni-all-1.8.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-shuffle\2.6.5\hadoop-mapreduce-client-shuffle-2.6.5.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-mapreduce-client-jobclient\2.6.5\hadoop-mapreduce-client-jobclient-2.6.5.jar;E:\WorkSpace\Maven\commons-daemon\commons-daemon\1.0.13\commons-daemon-1.0.13.jar;E:\WorkSpace\Maven\org\apache\hive\hive-exec\1.2.1\hive-exec-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-ant\1.2.1\hive-ant-1.2.1.jar;E:\WorkSpace\Maven\org\apache\velocity\velocity\1.5\velocity-1.5.jar;E:\WorkSpace\Maven\org\apache\hive\hive-metastore\1.2.1\hive-metastore-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-serde\1.2.1\hive-serde-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-common\1.2.1\hive-common-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-shims\1.2.1\hive-shims-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\shims\hive-shims-common\1.2.1\hive-shims-common-1.2.1.jar;E:\WorkSpace\Maven\log4j\apache-log4j-extras\1.2.17\apache-log4j-extras-1.2.17.jar;E:\WorkSpace\Maven\org\apache\thrift\libthrift\0.9.2\libthrift-0.9.2.jar;E:\WorkSpace\Maven\org\apache\hive\shims\hive-shims-0.20S\1.2.1\hive-shims-0.20S-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\shims\hive-shims-0.23\1.2.1\hive-shims-0.23-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-server-resourcemanager\2.6.0\hadoop-yarn-server-resourcemanager-2.6.0.jar;E:\WorkSpace\Maven\com\google\inject\extensions\guice-servlet\3.0\guice-servlet-3.0.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-server-applicationhistoryservice\2.6.0\hadoop-yarn-server-applicationhistoryservice-2.6.0.jar;E:\WorkSpace\Maven\org\apache\hadoop\hadoop-yarn-server-web-proxy\2.6.0\hadoop-yarn-server-web-proxy-2.6.0.jar;E:\WorkSpace\Maven\org\apache\hive\shims\hive-shims-scheduler\1.2.1\hive-shims-scheduler-1.2.1.jar;E:\WorkSpace\Maven\joda-time\joda-time\2.6\joda-time-2.6.jar;E:\WorkSpace\Maven\org\json\json\20090211\json-20090211.jar;E:\WorkSpace\Maven\net\sf\opencsv\opencsv\2.3\opencsv-2.3.jar;E:\WorkSpace\Maven\com\twitter\parquet-hadoop-bundle\1.6.0\parquet-hadoop-bundle-1.6.0.jar;E:\WorkSpace\Maven\com\jolbox\bonecp\0.8.0.RELEASE\bonecp-0.8.0.RELEASE.jar;E:\WorkSpace\Maven\org\apache\derby\derby\10.10.2.0\derby-10.10.2.0.jar;E:\WorkSpace\Maven\org\datanucleus\datanucleus-api-jdo\3.2.6\datanucleus-api-jdo-3.2.6.jar;E:\WorkSpace\Maven\org\datanucleus\datanucleus-core\3.2.10\datanucleus-core-3.2.10.jar;E:\WorkSpace\Maven\org\datanucleus\datanucleus-rdbms\3.2.9\datanucleus-rdbms-3.2.9.jar;E:\WorkSpace\Maven\commons-pool\commons-pool\1.6\commons-pool-1.6.jar;E:\WorkSpace\Maven\commons-dbcp\commons-dbcp\1.4\commons-dbcp-1.4.jar;E:\WorkSpace\Maven\javax\jdo\jdo-api\3.0.1\jdo-api-3.0.1.jar;E:\WorkSpace\Maven\org\antlr\antlr-runtime\3.4\antlr-runtime-3.4.jar;E:\WorkSpace\Maven\org\antlr\stringtemplate\3.2.1\stringtemplate-3.2.1.jar;E:\WorkSpace\Maven\org\apache\thrift\libfb303\0.9.2\libfb303-0.9.2.jar;E:\WorkSpace\Maven\org\antlr\ST4\4.0.4\ST4-4.0.4.jar;E:\WorkSpace\Maven\org\apache\ivy\ivy\2.4.0\ivy-2.4.0.jar;E:\WorkSpace\Maven\org\codehaus\groovy\groovy-all\2.1.6\groovy-all-2.1.6.jar;E:\WorkSpace\Maven\org\apache\calcite\calcite-core\1.2.0-incubating\calcite-core-1.2.0-incubating.jar;E:\WorkSpace\Maven\org\apache\calcite\calcite-avatica\1.2.0-incubating\calcite-avatica-1.2.0-incubating.jar;E:\WorkSpace\Maven\org\apache\calcite\calcite-linq4j\1.2.0-incubating\calcite-linq4j-1.2.0-incubating.jar;E:\WorkSpace\Maven\net\hydromatic\eigenbase-properties\1.1.5\eigenbase-properties-1.1.5.jar;E:\WorkSpace\Maven\org\codehaus\janino\janino\2.7.6\janino-2.7.6.jar;E:\WorkSpace\Maven\org\codehaus\janino\commons-compiler\2.7.6\commons-compiler-2.7.6.jar;E:\WorkSpace\Maven\org\pentaho\pentaho-aggdesigner-algorithm\5.1.5-jhyde\pentaho-aggdesigner-algorithm-5.1.5-jhyde.jar;E:\WorkSpace\Maven\stax\stax-api\1.0.1\stax-api-1.0.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-jdbc\1.2.1\hive-jdbc-1.2.1.jar;E:\WorkSpace\Maven\org\apache\hive\hive-service\1.2.1\hive-service-1.2.1.jar;E:\WorkSpace\Maven\net\sf\jpam\jpam\1.1\jpam-1.1.jar;E:\WorkSpace\Maven\org\eclipse\jetty\aggregate\jetty-all\7.6.0.v20120127\jetty-all-7.6.0.v20120127.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-jta_1.1_spec\1.1.1\geronimo-jta_1.1_spec-1.1.1.jar;E:\WorkSpace\Maven\javax\mail\mail\1.4.7\mail-1.4.7.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-jaspic_1.0_spec\1.0\geronimo-jaspic_1.0_spec-1.0.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-annotation_1.0_spec\1.1.1\geronimo-annotation_1.0_spec-1.1.1.jar;E:\WorkSpace\Maven\asm\asm-commons\3.1\asm-commons-3.1.jar;E:\WorkSpace\Maven\asm\asm-tree\3.1\asm-tree-3.1.jar;E:\WorkSpace\Maven\com\github\stephenc\findbugs\findbugs-annotations\1.3.9-1\findbugs-annotations-1.3.9-1.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-client\0.99.2\hbase-client-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-annotations\0.99.2\hbase-annotations-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-common\0.99.2\hbase-common-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-protocol\0.99.2\hbase-protocol-0.99.2.jar;E:\WorkSpace\Maven\io\netty\netty-all\4.0.24.Final\netty-all-4.0.24.Final.jar;E:\WorkSpace\Maven\org\jruby\joni\joni\2.1.2\joni-2.1.2.jar;E:\WorkSpace\Maven\org\jruby\jcodings\jcodings\1.0.8\jcodings-1.0.8.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-server\0.99.2\hbase-server-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-prefix-tree\0.99.2\hbase-prefix-tree-0.99.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-common\0.99.2\hbase-common-0.99.2-tests.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-hadoop-compat\0.99.2\hbase-hadoop-compat-0.99.2.jar;E:\WorkSpace\Maven\org\apache\commons\commons-math\2.2\commons-math-2.2.jar;E:\WorkSpace\Maven\org\apache\hbase\hbase-hadoop2-compat\0.99.2\hbase-hadoop2-compat-0.99.2.jar;E:\WorkSpace\Maven\com\yammer\metrics\metrics-core\2.2.0\metrics-core-2.2.0.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jetty-sslengine\6.1.26\jetty-sslengine-6.1.26.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jsp-2.1\6.1.14\jsp-2.1-6.1.14.jar;E:\WorkSpace\Maven\org\mortbay\jetty\jsp-api-2.1\6.1.14\jsp-api-2.1-6.1.14.jar;E:\WorkSpace\Maven\org\mortbay\jetty\servlet-api-2.5\6.1.14\servlet-api-2.5-6.1.14.jar;E:\WorkSpace\Maven\org\jamon\jamon-runtime\2.3.1\jamon-runtime-2.3.1.jar;E:\WorkSpace\Maven\com\lmax\disruptor\3.3.0\disruptor-3.3.0.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-core\4.10.3\lucene-core-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-queryparser\4.10.3\lucene-queryparser-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-queries\4.10.3\lucene-queries-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-sandbox\4.10.3\lucene-sandbox-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-analyzers-common\4.10.3\lucene-analyzers-common-4.10.3.jar;E:\WorkSpace\Maven\org\apache\lucene\lucene-analyzers-smartcn\4.10.3\lucene-analyzers-smartcn-4.10.3.jar;E:\WorkSpace\Maven\com\janeluo\ikanalyzer\2012_u6\ikanalyzer-2012_u6.jar;E:\WorkSpace\Maven\org\apache\solr\solr-solrj\4.10.3\solr-solrj-4.10.3.jar;E:\WorkSpace\Maven\org\codehaus\woodstox\wstx-asl\3.2.7\wstx-asl-3.2.7.jar;E:\WorkSpace\Maven\org\noggit\noggit\0.5\noggit-0.5.jar;E:\WorkSpace\Maven\org\mybatis\mybatis\3.2.8\mybatis-3.2.8.jar;E:\WorkSpace\Maven\org\mybatis\mybatis-spring\1.2.2\mybatis-spring-1.2.2.jar;E:\WorkSpace\Maven\mysql\mysql-connector-java\5.1.32\mysql-connector-java-5.1.32.jar;E:\WorkSpace\Maven\org\apache\kafka\kafka_2.9.2\0.8.1\kafka_2.9.2-0.8.1.jar;E:\WorkSpace\Maven\org\scala-lang\scala-library\2.9.2\scala-library-2.9.2.jar;E:\WorkSpace\Maven\com\yammer\metrics\metrics-annotation\2.2.0\metrics-annotation-2.2.0.jar;E:\WorkSpace\Maven\net\sf\jopt-simple\jopt-simple\3.2\jopt-simple-3.2.jar;E:\WorkSpace\Maven\org\mongodb\mongo-java-driver\3.4.2\mongo-java-driver-3.4.2.jar;E:\WorkSpace\Maven\org\hibernate\hibernate-core\5.1.2.Final\hibernate-core-5.1.2.Final.jar;E:\WorkSpace\Maven\org\jboss\logging\jboss-logging\3.3.0.Final\jboss-logging-3.3.0.Final.jar;E:\WorkSpace\Maven\org\hibernate\javax\persistence\hibernate-jpa-2.1-api\1.0.0.Final\hibernate-jpa-2.1-api-1.0.0.Final.jar;E:\WorkSpace\Maven\org\javassist\javassist\3.20.0-GA\javassist-3.20.0-GA.jar;E:\WorkSpace\Maven\org\jboss\jandex\2.0.0.Final\jandex-2.0.0.Final.jar;E:\WorkSpace\Maven\com\fasterxml\classmate\1.3.0\classmate-1.3.0.jar;E:\WorkSpace\Maven\org\hibernate\common\hibernate-commons-annotations\5.0.1.Final\hibernate-commons-annotations-5.0.1.Final.jar;E:\WorkSpace\Maven\org\activiti\activiti-engine\5.22.0\activiti-engine-5.22.0.jar;E:\WorkSpace\Maven\org\activiti\activiti-bpmn-converter\5.22.0\activiti-bpmn-converter-5.22.0.jar;E:\WorkSpace\Maven\org\activiti\activiti-bpmn-model\5.22.0\activiti-bpmn-model-5.22.0.jar;E:\WorkSpace\Maven\org\slf4j\jcl-over-slf4j\1.7.6\jcl-over-slf4j-1.7.6.jar;E:\WorkSpace\Maven\org\activiti\activiti-process-validation\5.22.0\activiti-process-validation-5.22.0.jar;E:\WorkSpace\Maven\org\activiti\activiti-image-generator\5.22.0\activiti-image-generator-5.22.0.jar;E:\WorkSpace\Maven\org\apache\commons\commons-email\1.4\commons-email-1.4.jar;E:\WorkSpace\Maven\com\sun\mail\javax.mail\1.5.2\javax.mail-1.5.2.jar;E:\WorkSpace\Maven\org\apache\tomcat\jsp-api\6.0.37\jsp-api-6.0.37.jar;E:\WorkSpace\Maven\org\apache\tomcat\el-api\6.0.37\el-api-6.0.37.jar;E:\WorkSpace\Maven\org\apache\tomcat\servlet-api\6.0.37\servlet-api-6.0.37.jar;E:\WorkSpace\Maven\org\freemarker\freemarker\2.3.19\freemarker-2.3.19.jar;E:\WorkSpace\Maven\com\alibaba\druid\1.0.12\druid-1.0.12.jar;D:\OpenSource\jdk1.8.0\lib\jconsole.jar;E:\WorkSpace\Maven\com\alibaba\fastjson\1.1.41\fastjson-1.1.41.jar;E:\WorkSpace\Maven\org\apache\activemq\activemq-all\5.11.1\activemq-all-5.11.1.jar;E:\WorkSpace\Maven\org\apache\activemq\activemq-pool\5.11.1\activemq-pool-5.11.1.jar;E:\WorkSpace\Maven\org\apache\activemq\activemq-jms-pool\5.11.1\activemq-jms-pool-5.11.1.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-jms_1.1_spec\1.1.1\geronimo-jms_1.1_spec-1.1.1.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-jta_1.0.1B_spec\1.0.1\geronimo-jta_1.0.1B_spec-1.0.1.jar;E:\WorkSpace\Maven\org\apache\activemq\activemq-client\5.11.1\activemq-client-5.11.1.jar;E:\WorkSpace\Maven\org\fusesource\hawtbuf\hawtbuf\1.11\hawtbuf-1.11.jar;E:\WorkSpace\Maven\org\apache\geronimo\specs\geronimo-j2ee-management_1.1_spec\1.0.1\geronimo-j2ee-management_1.1_spec-1.0.1.jar;E:\WorkSpace\Maven\org\mozilla\rhino\1.7R4\rhino-1.7R4.jar;E:\WorkSpace\Maven\com\yahoo\platform\yui\yuicompressor\2.4.8\yuicompressor-2.4.8.jar;E:\WorkSpace\Maven\rhino\js\1.7R2\js-1.7R2.jar;E:\WorkSpace\Maven\net\sf\ehcache\ehcache\2.10.4\ehcache-2.10.4.jar
+[INFO ][20180527 21:10:51,311][Environment:100] Client environment:java.library.path=D:\OpenSource\jdk1.8.0\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:/OpenSource/jdk1.8.0/jre/bin/server;D:/OpenSource/jdk1.8.0/jre/bin;D:/OpenSource/jdk1.8.0/jre/lib/amd64;D:\SoftWare\nSC\python;D:\SoftWare\nSC\bin;D:\app\SuperWang\product\11.2.0\dbhome_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\OpenSource\Subversion\bin;D:\SoftWare\StorageExecutive;D:\OpenSource\hadoop-2.6.5\bin;D:\OpenSource\TortoiesSVN\bin;C:\Users\SuperWang\.app\;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;%JAVA_HOME%\bin;%MYSQL_HOME%\bin;%SVN_HOME%\bin;%MAVEN_HOME%\bin;%FFMEG_HOME%\bin;;D:\OpenSource\eclipse4.6;;.
+[INFO ][20180527 21:10:51,311][Environment:100] Client environment:java.io.tmpdir=E:\SUPERW~1\Temp\
+[INFO ][20180527 21:10:51,313][Environment:100] Client environment:java.compiler=<NA>
+[INFO ][20180527 21:10:51,313][Environment:100] Client environment:os.name=Windows 10
+[INFO ][20180527 21:10:51,313][Environment:100] Client environment:os.arch=amd64
+[INFO ][20180527 21:10:51,313][Environment:100] Client environment:os.version=10.0
+[INFO ][20180527 21:10:51,314][Environment:100] Client environment:user.name=SuperWang
+[INFO ][20180527 21:10:51,314][Environment:100] Client environment:user.home=C:\Users\SuperWang
+[INFO ][20180527 21:10:51,314][Environment:100] Client environment:user.dir=E:\WorkSpace\Eclipse4.6\StudyProject
+[INFO ][20180527 21:10:51,315][ZooKeeper:438] Initiating client connection, connectString=192.168.0.71:2181,192.168.0.72:2181,192.168.0.73:2181 sessionTimeout=6000 watcher=org.I0Itec.zkclient.ZkClient@4fe767f3
+[INFO ][20180527 21:10:51,393][ClientCnxn$SendThread:966] Opening socket connection to server CentOS-03/192.168.0.73:2181. Will not attempt to authenticate using SASL (unknown error)
+[INFO ][20180527 21:10:51,395][ClientCnxn$SendThread:849] Socket connection established to CentOS-03/192.168.0.73:2181, initiating session
+[INFO ][20180527 21:10:51,407][ClientCnxn$SendThread:1207] Session establishment complete on server CentOS-03/192.168.0.73:2181, sessionid = 0x363a1afbbc00002, negotiated timeout = 6000
+[INFO ][20180527 21:10:51,408][ZkClient:449] zookeeper state changed (SyncConnected)
+[INFO ][20180527 21:10:51,432][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], starting auto committer every 1000 ms
+[INFO ][20180527 21:10:51,522][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], begin registering consumer dashujujiagoushi_SuperWang-1527426651270-cca2bd4b in ZK
+[INFO ][20180527 21:10:51,610][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], end registering consumer dashujujiagoushi_SuperWang-1527426651270-cca2bd4b in ZK
+[INFO ][20180527 21:10:51,615][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], starting watcher executor thread for consumer dashujujiagoushi_SuperWang-1527426651270-cca2bd4b
+[INFO ][20180527 21:10:51,651][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], begin rebalancing consumer dashujujiagoushi_SuperWang-1527426651270-cca2bd4b try #0
+[INFO ][20180527 21:10:51,888][Logging$class:68] [ConsumerFetcherManager-1527426651418] Stopping leader finder thread
+[INFO ][20180527 21:10:51,889][Logging$class:68] [ConsumerFetcherManager-1527426651418] Stopping all fetchers
+[INFO ][20180527 21:10:51,892][Logging$class:68] [ConsumerFetcherManager-1527426651418] All connections stopped
+[INFO ][20180527 21:10:51,894][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], Cleared all relevant queues for this fetcher
+[INFO ][20180527 21:10:51,897][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], Cleared the data chunks in all the consumer message iterators
+[INFO ][20180527 21:10:51,898][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], Committing all offsets after clearing the fetcher queues
+[INFO ][20180527 21:10:51,900][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], Releasing partition ownership
+[INFO ][20180527 21:10:51,905][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], Consumer dashujujiagoushi_SuperWang-1527426651270-cca2bd4b rebalancing the following partitions: ArrayBuffer(0, 1, 2, 3) for topic orderMq with consumers: List(dashujujiagoushi_SuperWang-1527426651270-cca2bd4b-0, dashujujiagoushi_SuperWang-1527426651270-cca2bd4b-1, dashujujiagoushi_SuperWang-1527426651270-cca2bd4b-2)
+[INFO ][20180527 21:10:51,909][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], dashujujiagoushi_SuperWang-1527426651270-cca2bd4b-2 attempting to claim partition 3
+[INFO ][20180527 21:10:51,916][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], dashujujiagoushi_SuperWang-1527426651270-cca2bd4b-0 attempting to claim partition 0
+[INFO ][20180527 21:10:51,918][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], dashujujiagoushi_SuperWang-1527426651270-cca2bd4b-0 attempting to claim partition 1
+[INFO ][20180527 21:10:51,919][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], dashujujiagoushi_SuperWang-1527426651270-cca2bd4b-1 attempting to claim partition 2
+[INFO ][20180527 21:10:51,942][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], dashujujiagoushi_SuperWang-1527426651270-cca2bd4b-0 successfully owned partition 1 for topic orderMq
+[INFO ][20180527 21:10:51,946][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], dashujujiagoushi_SuperWang-1527426651270-cca2bd4b-1 successfully owned partition 2 for topic orderMq
+[INFO ][20180527 21:10:51,950][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], dashujujiagoushi_SuperWang-1527426651270-cca2bd4b-0 successfully owned partition 0 for topic orderMq
+[INFO ][20180527 21:10:51,953][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], dashujujiagoushi_SuperWang-1527426651270-cca2bd4b-2 successfully owned partition 3 for topic orderMq
+[INFO ][20180527 21:10:51,955][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], Updating the cache
+[INFO ][20180527 21:10:51,970][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], Consumer dashujujiagoushi_SuperWang-1527426651270-cca2bd4b selected partitions : orderMq:0: fetched offset = -1: consumed offset = -1,orderMq:1: fetched offset = -1: consumed offset = -1,orderMq:2: fetched offset = -1: consumed offset = -1,orderMq:3: fetched offset = -1: consumed offset = -1
+[INFO ][20180527 21:10:51,973][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b-leader-finder-thread], Starting 
+[INFO ][20180527 21:10:51,975][Logging$class:68] [dashujujiagoushi_SuperWang-1527426651270-cca2bd4b], end rebalancing consumer dashujujiagoushi_SuperWang-1527426651270-cca2bd4b try #0
+[INFO ][20180527 21:10:52,004][Logging$class:68] Verifying properties
+[INFO ][20180527 21:10:52,004][Logging$class:68] Property client.id is overridden to dashujujiagoushi
+[INFO ][20180527 21:10:52,004][Logging$class:68] Property metadata.broker.list is overridden to CentOS-01:9092,CentOS-02:9092,CentOS-03:9092
+[INFO ][20180527 21:10:52,005][Logging$class:68] Property request.timeout.ms is overridden to 30000
+[INFO ][20180527 21:10:52,034][Logging$class:68] Fetching metadata from broker id:2,host:CentOS-03,port:9092 with correlation id 0 for 1 topic(s) Set(orderMq)
+[INFO ][20180527 21:10:52,038][Logging$class:68] Connected to CentOS-03:9092 for producing
+[INFO ][20180527 21:10:52,065][Logging$class:68] Disconnecting from CentOS-03:9092
+[INFO ][20180527 21:10:52,086][Logging$class:68] [ConsumerFetcherThread-dashujujiagoushi_SuperWang-1527426651270-cca2bd4b-0-2], Starting 
+[INFO ][20180527 21:10:52,131][Logging$class:68] [ConsumerFetcherThread-dashujujiagoushi_SuperWang-1527426651270-cca2bd4b-0-1], Starting 
+[INFO ][20180527 21:10:52,165][Logging$class:68] [ConsumerFetcherThread-dashujujiagoushi_SuperWang-1527426651270-cca2bd4b-0-0], Starting 
+[INFO ][20180527 21:10:52,187][Logging$class:68] [ConsumerFetcherManager-1527426651418] Added fetcher for partitions ArrayBuffer([[orderMq,1], initOffset -1 to broker id:2,host:CentOS-03,port:9092] , [[orderMq,2], initOffset -1 to broker id:0,host:CentOS-01,port:9092] , [[orderMq,0], initOffset -1 to broker id:1,host:CentOS-02,port:9092] , [[orderMq,3], initOffset -1 to broker id:1,host:CentOS-02,port:9092] )

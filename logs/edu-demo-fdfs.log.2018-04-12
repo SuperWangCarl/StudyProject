@@ -1,0 +1,15 @@
+[WARN ][20180412 15:10:23,487][HttpMethodBase:682] Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+[WARN ][20180412 15:10:27,958][HttpMethodBase:682] Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+[WARN ][20180412 15:10:33,327][HttpMethodBase:682] Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+[WARN ][20180412 15:11:06,334][HttpMethodBase:682] Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+[WARN ][20180412 15:11:09,791][HttpMethodBase:682] Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+[WARN ][20180412 15:11:14,872][HttpMethodBase:682] Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+[WARN ][20180412 15:12:19,599][HttpMethodBase:682] Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+[WARN ][20180412 15:12:25,029][HttpMethodBase:682] Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+[WARN ][20180412 15:12:29,483][HttpMethodBase:682] Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+[WARN ][20180412 15:12:30,809][HttpMethodBase:682] Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+[WARN ][20180412 15:12:35,917][HttpMethodBase:682] Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+[WARN ][20180412 15:13:05,262][HttpMethodBase:682] Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+[WARN ][20180412 15:13:07,618][HttpMethodBase:682] Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+[INFO ][20180412 16:20:29,868][HttpMethodDirector:439] I/O exception (java.net.ConnectException) caught when processing request: Connection timed out: connect
+[INFO ][20180412 16:20:29,871][HttpMethodDirector:445] Retrying request
