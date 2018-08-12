@@ -34,6 +34,7 @@ public class ClientWithResponseHandler {
 	/**
 	 * 普通的get方式调用
 	 * @throws Exception
+	 * 
 	 */
     public final static void commonServiceGet() throws Exception {
         CloseableHttpClient httpclient = HttpClients.createDefault();
