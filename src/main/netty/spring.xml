@@ -13,5 +13,4 @@
     <bean id="two" class="cn.itcast_04_springannotation.springrunorder.Two">
         <constructor-arg name="two" value="two" />
     </bean>
-
 </beans>
