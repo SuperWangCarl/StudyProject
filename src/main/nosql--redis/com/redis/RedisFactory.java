@@ -37,6 +37,7 @@ public class RedisFactory {
 		//getSentinl();
 
 	}
+
 	/**
 	 * 获取之后需要关闭本次连接,但是不可以关闭连接池
 	 * @return
@@ -44,44 +45,46 @@ public class RedisFactory {
 	public static Jedis getSentinlConnect() {
 		if (sentinel == null || sentinel.isClosed()) {
 			Set<String> sentinels = new HashSet<String>();
-			sentinels.add("192.168.0.71:26011");
-			sentinels.add("192.168.0.71:26012");
-			sentinels.add("192.168.0.71:26013");
+			sentinels.add("192.168.207.71:26011");
+			sentinels.add("192.168.207.71:26012");
+			sentinels.add("192.168.207.71:26013");
 			//masterName 分片的名称 
 			//sentinels Redis Sentinel 服务地址列表 
 			sentinel = new JedisSentinelPool("mymaster", sentinels, jedisPoolConfig);
 		}
 		return sentinel.getResource();
 	}
-	
-	private static JedisSentinelPool getSentinlPool() {
+
+	public static JedisSentinelPool getSentinlPool() {
 		if (sentinel == null || sentinel.isClosed()) {
 			Set<String> sentinels = new HashSet<String>();
-			sentinels.add("192.168.0.71:26011");
-			sentinels.add("192.168.0.71:26012");
-			sentinels.add("192.168.0.71:26013");
-
+			sentinels.add("192.168.207.71:26011");
+			sentinels.add("192.168.207.71:26012");
+			sentinels.add("192.168.207.71:26013");
+			System.out.println("----------------------------------------------");
 			sentinel = new JedisSentinelPool("mymaster", sentinels, jedisPoolConfig);
 		}
 		return sentinel;
 	}
+
 	/**
 	 * 获取之后需要关闭本次连接,但是不可以关闭连接池
 	 * @return
 	 */
 	public static Jedis getSinglePool() {
-		if(jedisPool == null || jedisPool.isClosed()){
+		if (jedisPool == null || jedisPool.isClosed()) {
 			jedisPool = new JedisPool(jedisPoolConfig, "127.0.0.1", 6001);
 		}
 		//从连接池中获得连接
 		return jedisPool.getResource();
 	}
+
 	/**
 	 * 获取之后不可关闭连接
 	 * @return
 	 */
 	public static JedisCluster getCluster() {
-		if(cluster == null){
+		if (cluster == null) {
 			initJedisCluster();
 		}
 		return cluster;

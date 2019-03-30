@@ -37,7 +37,21 @@
 			<version>1.4.01</version>
 		</dependency>
 		<!-- web crawling End -->
-
+		<dependency>
+			<groupId>org.apache.xmlbeans</groupId>
+			<artifactId>xmlbeans</artifactId>
+			<version>2.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.16-beta1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>3.16-beta1</version>
+		</dependency>
 		<!-- Common Dependency Begin -->
 		<dependency>
 			<groupId>xalan</groupId>
@@ -466,11 +480,11 @@
 		</dependency>
 		<!-- kafka Driver End -->
 		<!-- Others Begin -->
-		 <dependency>
-            <groupId>org.apache.struts</groupId>
-            <artifactId>struts2-core</artifactId>
-            <version>2.2.1</version>
-        </dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-core</artifactId>
+			<version>2.2.1</version>
+		</dependency>
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
@@ -563,32 +577,29 @@
 		</dependency>
 		<!-- Others End -->
 		<!-- Maout Begin -->
-		 <dependency>
-            <groupId>org.apache.mahout</groupId>
-            <artifactId>mahout-examples</artifactId>
-            <version>0.11.2</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
-        </dependency>
-        <dependency>
-            <groupId>net.sf.barcode4j</groupId>
-            <artifactId>barcode4j</artifactId>
-            <version>2.0</version>
-        </dependency>
-        <!-- <dependency>
-            <groupId>org.wltea.ik-analyzer</groupId>
-            <artifactId>ik-analyzer</artifactId>
-            <version>4.10.2</version>
-        </dependency> -->
+		<dependency>
+			<groupId>org.apache.mahout</groupId>
+			<artifactId>mahout-examples</artifactId>
+			<version>0.11.2</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.barcode4j</groupId>
+			<artifactId>barcode4j</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<!-- <dependency> <groupId>org.wltea.ik-analyzer</groupId> <artifactId>ik-analyzer</artifactId> 
+			<version>4.10.2</version> </dependency> -->
 		<!-- Maout End -->
 	</dependencies>
 	<build>
@@ -610,14 +621,9 @@
 				<phase>package</phase> <goals> <goal>single</goal> </goals> </execution> 
 				</executions> </plugin> -->
 
-			<!-- <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-				</configuration>
-			</plugin> -->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId> 
+				<configuration> <source>1.7</source> <target>1.7</target> </configuration> 
+				</plugin> -->
 		</plugins>
 
 	</build>

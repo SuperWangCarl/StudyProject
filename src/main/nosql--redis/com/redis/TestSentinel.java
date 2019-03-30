@@ -17,15 +17,17 @@ import redis.clients.jedis.JedisSentinelPool;
 public class TestSentinel {
 
 	/*
-	 * 测试直接关闭连接池,无影响不会重新创建
+	 * 直接关闭连接池,无影响不会重新创建
 	 */
 	@Test
 	public void testSentinel(){
+		System.out.println("----------------------------------------------");
 		try {
 			for (int i = 0; i < 500; i++) {
-				//JedisSentinelPool pool = RedisFactory.getSentinlPool();
-				//System.out.println(pool);
-				//pool.close();
+				JedisSentinelPool pool = RedisFactory.getSentinlPool();
+				System.out.println(pool);
+				pool.close();
+				System.out.println("关闭了");
 				TimeUnit.MILLISECONDS.sleep(100);
 			}
 			System.out.println("----------------------------------------------");
@@ -36,12 +38,12 @@ public class TestSentinel {
 	}
 	/*
 	 * 不添加close:
-	 * 每次连接redis新创建一个连接,服务端redis的连接数不断增加,直到链接耗尽
+	 * 每次连接redis新创建一个连接,服务端redis的连接数不断增加,直到链接耗尽 不会自动回收 长连接
 	 * 顺序访问 服务器始终显示 为for循环的次数,及每次连接新创建一个连接
 	 * 添加close:
 	 * 每次服务端显示1次连接
 	 */
-	
+	@Test
 	public void testSingleConnection() {
 		try {
 			for (int i = 0; i < 500; i++) {
@@ -59,9 +61,10 @@ public class TestSentinel {
 	}
 
 	/*
+	 * 使用线程池 非顺序访问 redis
 	 * 当for循环次数大于最大空闲连接数,则服务器连接数显示为 最大的空闲连接
 	 * 当for循环次数小于最大空闲连接数,则服务器连接数显示为 for循环次数
-	 * */
+	 * */   
 	public void testMultiConnection() {
 		try {
 
